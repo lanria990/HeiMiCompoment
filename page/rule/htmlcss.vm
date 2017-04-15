@@ -1,0 +1,458 @@
+#extends("/page/layout/frametwo.vm")
+
+#block("body")
+#require("./rule.css")
+<section id="content" class="art-content">
+
+<div class="container">
+  <div id="markup">
+    <article id="content" class="markdown-body">
+      <h1>HTML编码规范</h1>
+      <p><a href="#%E8%AF%AD%E6%B3%95%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">1 语法及注意事项</a> </p>
+      <p><a href="#%E7%9C%81%E7%95%A5ur%E5%9C%B0%E5%9D%80%E4%B8%AD%E7%9A%84-http-%E6%88%96-https-%E7%9A%84%E9%83%A8%E5%88%86">2 省略ur地址中的 http: 或 https: 的部分</a> </p>
+      <p><a href="#html5-doctype">3 HTML5 doctype</a> </p>
+      <p><a href="#%E8%AF%AD%E8%A8%80%E5%B1%9E%E6%80%A7">4 语言属性（Language attribute）</a></p>
+      <p><a href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81">5 字符编码</a></p>
+      <p><a href="#ie-%E5%85%BC%E5%AE%B9%E6%A8%A1%E5%BC%8F">6 IE 兼容模式</a></p>
+      <p><a href="#%E5%BC%95%E5%85%A5css%E6%96%87%E4%BB%B6">7 引入CSS文件</a></p>
+      <p><a href="#%E5%B1%9E%E6%80%A7%E9%A1%BA%E5%BA%8F">8 属性顺序</a></p>
+      <p><a href="#%E5%87%8F%E5%B0%91%E6%A0%87%E7%AD%BE%E7%9A%84%E6%95%B0%E9%87%8F%E5%92%8Cdiv%E7%9A%84%E5%B5%8C%E5%A5%97">9 减少标签的数量和div的嵌套</a></p>
+      <h2>1 语法及注意事项</h2>
+      <ul>
+        <li>
+          <p>[强制] 用两个空格来代替制表符（tab）</p>
+        </li>
+        <li>
+          <p>[建议] 为页面添加title，description，keywords有利于搜索引擎的爬虫。</p>
+        </li>
+        <li>
+          <p>[强制] 嵌套元素应当缩进一次（即两个空格）。</p>
+        </li>
+        <li>
+          <p>[强制] 对于属性的定义，确保全部使用双引号，绝不要使用单引号。</p>
+        </li>
+        <li>
+          <p>[建议] 不要在自闭合（self-closing）元素的尾部添加斜线 --HTML5 规范中明确说明这是可选的。</p>
+        </li>
+        <li>
+          <p>[强制] 不要省略可选的结束标签（closing tag）（例如，<code>&lt;/li&gt;</code> 或 <code>&lt;/body&gt;</code>）。</p>
+        </li>
+        <li>
+          <p>[建议] 根据HTML各个元素的用途而去使用它们的标签合理利用</p>
+        </li>
+        <li>
+          <p>[建议] 重要图片必须加上alt属性; 给重要的元素和截断的元素加上title。</p>
+        </li>
+        <li>
+          <p>[建议] 删除末尾空格。</p>
+        </li>
+        <li>
+          <p>[强制] 给区块代码及重要功能(比如循环)加上注释, 方便后台添加功能。</p>
+        </li>
+        <li>
+          <p>[强制] 每个块元素、列表元素或表格元素都独占一行，每个子元素都相对于父元素进行缩进。</p>
+        </li>
+        <li>
+          <p>[强制] 特殊符号使用: 尽可能使用代码替代:比如 &lt;(&lt;) &amp; &gt;(&gt;) &amp; 空格( ) &amp; »(») 等等。</p>
+        </li>
+      </ul>
+      <p>例如：</p>
+      <div class="codehilite">
+        <pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page title<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;description&gt;</span>...<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;keywords&gt;</span>...<span class="nt">&lt;/keywords&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/company-logo.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Company&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;hello-world&quot;</span><span class="nt">&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+    <span class="c">&lt;!-- article begin --&gt;</span>
+    <span class="nt">&lt;article&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">&quot;更多&quot;</span> <span class="na">style=</span><span class="s">&quot;…&quot;</span><span class="nt">&gt;</span>more<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+      </div>
+      <h2>2 省略ur地址中的 http: 或 https: 的部分</h2>
+      <p>在引用样式表文件、脚本文件、图片以及其它媒体文件时，都可以这样做，除非使用这两种协议都无法获取到资源，也就是说必须使用其它协议才能获取到资源的，就不能省略啦，只有http:和https:是可以省略的。这样做的好处是能减少文件的体积，而且还能避免一些相对url中混乱问题的产生。</p>
+      <div class="codehilite">
+        <pre><span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">不推荐</span> <span class="nt">--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">script</span> <span class="nt">src</span><span class="o">=</span><span class="s2">&quot;http://www.google.com/js/gweb/analytics/autotrack.js&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">script</span><span class="o">&gt;&lt;!</span><span class="nt">--</span> <span class="nt">推荐</span> <span class="nt">--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">script</span> <span class="nt">src</span><span class="o">=</span><span class="s2">&quot;//www.google.com/js/gweb/analytics/autotrack.js&quot;</span><span class="o">&gt;&lt;/</span><span class="nt">script</span><span class="o">&gt;</span>
+<span class="c">/* 不推荐 */</span>
+<span class="nc">.example</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(http://www.google.com/images/example)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* 推荐 */</span>
+<span class="nc">.example</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(//www.google.com/images/example)</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+      </div>
+      <h2>3 HTML5 doctype</h2>
+      <h4>[强制] 为每个 HTML 页面的第一行添加标准模式（standard mode）的声明</h4>
+      <p>说明：这样能够确保在每个浏览器中拥有一致的展现。</p>
+      <div class="codehilite">
+        <pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+      </div>
+      <h2>4 语言属性</h2>
+      <h4>[强制] 建议为 html 根元素指定 lang 属性，从而为文档设置正确的语言。</h4>
+      <div class="codehilite">
+        <pre><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;zh-CN&quot;</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+      </div>
+      <h2>5 字符编码</h2>
+      <h4>[强制] 采用 UTF-8 编码</h4>
+      <p>说明：通过明确声明字符编码，能够确保浏览器快速并容易的判断页面内容的渲染方式。这样做的好处是，可以避免在 HTML 中使用字符实体标记（character entity），从而全部与文档编码一致。</p>
+      <div class="codehilite">
+        <pre><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre>
+      </div>
+      <h2>6 IE 兼容模式</h2>
+      <h4>[建议] IE 支持通过特定的
+        <meta>
+        标签来确定绘制当前页面所应该采用的 IE 版本</h4>
+      <p>说明：除非有强烈的特殊需求，否则最好是设置为 edge mode，从而通知 IE 采用其所支持的最新的模式。</p>
+      <div class="codehilite">
+        <pre><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=Edge&quot;</span><span class="nt">&gt;</span>
+</pre>
+      </div>
+      <h2>7 引入CSS文件</h2>
+      <h4>[建议] 不指定 type 属性</h4>
+      <p>说明：根据 HTML5 规范，在引入 CSS 文件时一般不需要指定 type 属性，因为 text/css分别是它们的默认值。</p>
+      <div class="codehilite">
+        <pre><span class="c">&lt;!-- External CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;code-guide.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- In-document CSS --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+  <span class="c">/* ... */</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre>
+      </div>
+      <h2>8 属性顺序</h2>
+      <p>HTML 属性应当按照以下给出的顺序依次排列，确保代码的易读性。</p>
+      <ul>
+        <li>class</li>
+        <li>id, name</li>
+        <li>data-*</li>
+        <li>src, for, type, href</li>
+        <li>title, alt</li>
+        <li>aria-*, role</li>
+      </ul>
+      <p>class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。</p>
+      <div class="codehilite">
+        <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;...&quot;</span> <span class="na">id=</span><span class="s">&quot;...&quot;</span> <span class="na">data-modal=</span><span class="s">&quot;toggle&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+  Example link
+<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">alt=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+</pre>
+      </div>
+      <h2>9 减少标签的数量和div的嵌套</h2>
+      <p>编写 HTML 代码时，尽量避免多余的父元素。很多时候，这需要迭代和重构来实现。请看下面的案例：</p>
+      <div class="codehilite">
+        <pre><span class="c">&lt;!-- Not so great --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;avatar&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;avatar&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>  
+  <span class="nt">&lt;/div&gt;</span>  
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Better --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">&quot;avatar&quot;</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a&gt;</span>
+      <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>  
+<span class="nt">&lt;/div&gt;</span>  
+</pre>
+      </div>
+      <h1>CSS编码规范</h1>
+      <p><a href="#%E8%AF%AD%E6%B3%95%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-1">1 语法及注意事项</a></p>
+      <p><a href="#%E4%B8%8D%E8%A6%81%E4%BD%BF%E7%94%A8-import">2 不要使用 <code>@import</code></a></p>
+      <p><a href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2media-query%E7%9A%84%E4%BD%8D%E7%BD%AE">3 媒体查询（Media query）的位置）</a></p>
+      <p><a href="#%E4%BB%A3%E7%A0%81%E5%9D%97">4 代码块</a></p>
+      <p><a href="#">5  简写形式的属性声明</a></p>
+      <p><a href="#">6 注释</a></p>
+      <p><a href="#">7 class 命名</a></p>
+      <p><a href="#">8 图片规范</a></p>
+      <h2>1 语法及注意事项</h2>
+      <ul>
+        <li>
+          <p>[强制] 用两个空格来代替制表符（tab） -- 这是唯一能保证在所有环境下获得一致展现的方法。</p>
+        </li>
+        <li>
+          <p>[强制] 为选择器分组时，将单独的选择器单独放在一行。</p>
+        </li>
+        <li>
+          <p>[建议] 为了代码的易读性，在每个声明块的左花括号前添加一个空格。</p>
+        </li>
+        <li>
+          <p>[建议] 声明块的右花括号应当单独成行。</p>
+        </li>
+        <li>
+          <p>[建议] 每条声明语句的 : 后应该插入一个空格。</p>
+        </li>
+        <li>
+          <p>[建议] 为了获得更准确的错误报告，每条声明都应该独占一行。</p>
+        </li>
+        <li>
+          <p>[强制] 所有声明语句都应当以分号结尾。(即使是最后一个)</p>
+        </li>
+        <li>
+          <p>[建议] 对于以逗号分隔的属性值，每个逗号后面都应该插入一个空格（例如，box-shadow）。</p>
+        </li>
+        <li>
+          <p>[建议] 不要在 <code>rgb()</code>、<code>rgba()</code>、<code>hsl()</code>、<code>hsla()</code> 或 <code>rect()</code> 。</p>
+        </li>
+        <li>
+          <p>[建议]  值的内部的逗号后面插入空格。这样利于从多个属性值（既加逗号也加空格）中区分多个颜色值（只加逗号，不加空格）。</p>
+        </li>
+        <li>
+          <p>[强制] 对于属性值或颜色参数，省略小于 1 的小数前面的 0 （例如，.5 代替 0.5；-.5px 代替 -0.5px）。</p>
+        </li>
+        <li>
+          <p>[强制] 十六进制值应该全部小写，例如，#fff。在扫描文档时，小写字符易于分辨，因为他们的形式更易于区分。例如，用 <code>#fff</code> 代替 <code>#ffffff</code>。</p>
+        </li>
+        <li>
+          <p>[强制] 为选择器中的属性添加双引号，例如，input[type="text"]</p>
+        </li>
+        <li>
+          <p>[强制] 避免为 0 值指定单位，例如，用 margin: 0; 代替 margin: 0px;。</p>
+        </li>
+      </ul>
+      <p>举例如下：</p>
+      <div class="codehilite">
+        <pre><span class="c">/* Bad CSS */</span>
+<span class="nc">.selector</span><span class="o">,</span> <span class="nc">.selector-secondary</span><span class="o">,</span> <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span><span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span><span class="m">0px</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="o">,</span><span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
+<span class="p">}</span>
+
+<span class="c">/* Good CSS */</span>
+<span class="nc">.selector</span><span class="o">,</span>
+<span class="nc">.selector-secondary</span><span class="o">,</span>
+<span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="o">,</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+      </div>
+      <h2>2 不要使用 <code>@import</code></h2>
+      <p>与<code>&lt;link&gt;</code>标签相比，<code>import</code>指令要慢很多，不光增加了额外的请求次数，还会导致不可预料的问题。替代办法有以下几种：</p>
+      <ul>
+        <li>
+          <p>使用多个 <code>&lt;link&gt;</code>元素</p>
+        </li>
+        <li>
+          <p>通过 <code>Sass</code> 或 <code>Less</code> 类似的 CSS 预处理器将多个 CSS 文件编译为一个文件</p>
+        </li>
+        <li>
+          <p>通过 Rails、Jekyll 或其他系统中提供过 <code>CSS</code> 文件合并功能</p>
+        </li>
+      </ul>
+      <div class="codehilite">
+        <pre><span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Use</span> <span class="nt">link</span> <span class="nt">elements</span> <span class="nt">--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">link</span> <span class="nt">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;core.css&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Avoid</span> <span class="k">@imports</span> <span class="nt">--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+  <span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&quot;more.css&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</pre>
+      </div>
+      <h2>3 媒体查询（Media query）的位置</h2>
+      <h4>[建议] 将媒体查询放在尽可能相关规则的附近。不要将他们打包放在一个单一样式文件中或者放在文档底部。</h4>
+      <p>说明：如果你把他们分开了，将来只会被大家遗忘。下面给出一个典型的实例。</p>
+      <div class="codehilite">
+        <pre><span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.element-avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.element-selected</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span><span class="p">}</span>
+  <span class="nc">.element-avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+  <span class="nc">.element-selected</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+      </div>
+      <h2>4 代码块</h2>
+      <ul>
+        <li>
+          <h4>[强制] 缩进所有代码块（“{}”之间）内容。它能够提高层次结构的清晰度如下。</h4>
+        </li>
+        <li>
+          <h4>[建议] 每个规则独立一行。两个规则之间隔行。</h4>
+        </li>
+      </ul>
+      <div class="codehilite">
+        <pre><span class="c">/* Multiple declarations, one per line */</span>
+<span class="nc">.sprite</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(../img/sprite.png)</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+ <span class="c">/* example */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(&quot;image.jpg&quot;)</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;image.jpg&quot;)</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="o">-</span><span class="k">left</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="o">-</span><span class="k">right</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+      </div>
+      <h2>5 简写形式的属性声明</h2>
+      <h4>[建议] 尽量用使用简写形式的属性声明减少文件大小，常见的简写属性声明的情况如下：</h4>
+      <ul>
+        <li>
+          <p><code>padding</code></p>
+        </li>
+        <li>
+          <p><code>margin</code></p>
+        </li>
+        <li>
+          <p><code>font</code></p>
+        </li>
+        <li>
+          <p><code>background</code></p>
+        </li>
+        <li>
+          <p><code>border</code></p>
+        </li>
+        <li>
+          <p><code>border-radius</code></p>
+        </li>
+      </ul>
+      <div class="codehilite">
+        <pre><span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url(&quot;image.jpg&quot;)</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+      </div>
+      <h2>6 注释</h2>
+      <h4>[建议] 对于较长的注释，务必书写完整的句子；对于一般性注解，可以书写简洁的短语。</h4>
+      <p>说明：代码是由人编写并维护的。请确保你的代码能够自描述、注释良好并且易于他人理解。好的代码注释能够传达上下文关系和代码目的。不要简单地重申组件或 class 名称。</p>
+      <div class="codehilite">
+        <pre><span class="c">/* Bad example */</span>
+<span class="c">/* Modal header */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c">/* Good example */</span>
+<span class="c">/* Wrapping element for .modal-title and .modal-close */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre>
+      </div>
+      <h2>7 class 命名</h2>
+      <ul>
+        <li>
+          <h4>[强制] class 名称中只能出现小写字符和破折号（dashe）（不是下划线，也不是驼峰命名法）。破折号应当用于相关 class 的命名（类似于命名空间）（例如，.btn 和 .btn-danger）。</h4>
+        </li>
+        <li>
+          <p>[建议] 避免过度任意的简写。.btn 代表 button，但是 .s 不能表达任何意思。</p>
+        </li>
+        <li>
+          <p>[建议] class 名称应当尽可能短，并且意义明确。</p>
+        </li>
+        <li>
+          <p>[建议] 使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。</p>
+        </li>
+        <li>
+          <p>[建议] 基于最近的父 class 或基本（base） class 作为新 class 的前缀。</p>
+        </li>
+        <li>
+          <p>[强制] 共有css是base.css，模块抽离css是mod-.css</p>
+        </li>
+        <li>
+          <p>[强制] 省略URI外的引号。例如：url(//www.google.com/css/go.css)。</p>
+        </li>
+      </ul>
+      <p>举例如下：</p>
+      <div class="codehilite">
+        <pre><span class="c">/* Bad example */</span>
+<span class="nc">.t</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.red</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Good example */</span>
+<span class="nc">.tweet</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.important</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+</pre>
+      </div>
+      <h2>8 图片规范</h2>
+      <ul>
+        <li>
+          <p>[强制] 所有页面元素类图片均放入images文件夹, 测试用图片/临时图片放于images/demoimg文件夹，默认占位图片放在images/default文件夹下。</p>
+        </li>
+        <li>
+          <p>[强制] 命名只能出现小写字符和破折号。</p>
+        </li>
+        <li>
+          <p>[建议] 图片格式仅限于gif || png || jpg，大图不能用png。</p>
+        </li>
+        <li>
+          <p>[建议] Icon尽量使用font-icon，减少服务器的加载。</p>
+        </li>
+      </ul>
+      <h2>9 工具</h2>
+      <p>CSS代码检查工具： CSSLint</p>
+      <p>CSS属性重排工具： CSSComb</p>
+      <p>html交易工具：W3C Markup Validation Service </p>
+    </article>
+  </div>
+</div>
+</section>
+#end   
+    #require("page/rule/components.vm")
+#end

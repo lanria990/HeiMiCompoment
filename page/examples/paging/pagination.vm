@@ -1,0 +1,255 @@
+## 分页组件布局
+## 
+## @author YJL LYY 2015/05/7
+## @author YJL  2015/05/8 增加小分页案例
+## @description 分页组件 
+## 
+#extends("/page/layout/frame.vm")
+    #block("body")
+    #require("./paginnation.css")
+#require("./min-page.css")
+<div class="art-content">
+  <header class="page-header">
+    <h1>分页组件</h1>
+  </header>
+    <h3>结构说明</h3>
+    <div class="docs-waring">
+      <ul class="text-doc disc-li">  
+        <li>  无间距加类名：  <span class="sta-del">pagination-none</span>  </li>
+        <li>  最大导航加类名：  <span class="sta-del">pagination-page-max</span>  </li>  
+        <li>  最小导航加类名：  <span class="sta-del">pagination-page-min</span>  </li>  
+        <li>  迷你导航加类名：  <span class="sta-del">pagination-page-mini</span>  </li>  
+        <li>基本分页引用css路径：require("./pagination.css")</li>
+        <li>小分页引用css路径：require("./min-page.css")</li>
+      </ul>
+    </div>
+  <h3>基本示例</h3>
+  <div class="docs-waring">
+    <ul class="disc-li">  
+      <li >分页不带条数<a href="#J_Page">¶</a> </li>  
+      <li >分页带条数<a href="#J_Page3">¶</a> </li>  
+      <li >链接拼接代码<a href="#J_Page4">¶</a> </li>  
+      <li >小分页示例<a href="#J_Page5">¶</a> </li>  
+      <li >最简单分页示例<a href="#J_Page6">¶</a> </li>  
+      <li >具体参数参照<a href="/pagination/api">分页API文档</a> </li>  
+      <li >具体参数参照<a href="/pagination/min/api">小分页API文档</a> </li>  
+    </ul>
+  </div>
+    <section>   
+        <h4>分页不带条数示例</h4>   
+      <div id="J_Page"></div>
+      <div class="docs-section">
+        <div class="m-example">
+          <h4>HTML</h4>
+        </div>
+<pre>
+  <code class="language-javascript" data-lang="javascript">
+    // CSS引用 require("./paginnation.css")
+    <div id="J_Page" class="pagination-page"></div>
+    //js引用 require(['./pagination.js'])
+          </code>
+        </pre>        
+      </div> 
+      <div class="docs-section">
+      <div class="m-example">
+        <h4>JS</h4>
+      </div>
+        <pre>  
+        <code class="language-javascript" data-lang="javascript">  
+       //引入分页控件 require('page');
+       //初始化方法  
+
+       var $page = $('#J_Page').myPage( {
+        pno: 1,   //当前页
+        total: 20,//总页数
+        isGoPage:false,//是否显示跳转
+        isShowTotalPage:false,//是否显示总页数
+        isShowMore:false,//是否显示更多...
+        clickFn: _postPage//跳转函数
+       });
+       //ajax加载  
+       function _postPage(n) {
+        //....
+       }
+       </code>  
+       </pre> 
+       </div> 
+    </section>  
+    <section>
+      <h4>分页带条数代码示例</h4>  
+      <div id="J_Page2"></div>
+      <div class="docs-section">
+        <div class="m-example">
+          <h4>HTML</h4>
+        </div>
+          <pre>
+          <code class="language-javascript" data-lang="javascript">
+    // CSS引用 require("./paginnation.css")
+    <div id="J_Page2" class="pagination-page"></div>
+    //js引用 require(['./pagination.js'])
+          </code>
+          </pre>
+      </div>  
+      <div class="docs-section">
+        <div class="m-example">
+          <h4>JS</h4>
+        </div>
+      <pre>  
+      <code class="language-javascript" data-lang="javascript">  
+       //引入分页控件 require('page');
+       //初始化方法  在一个页面中多次初始化分页函数，需要指定gopageWrapId、gopageButtonId、gopageTextboxId参数
+       var $page2 = $('#J_Page2').myPage({
+            pno: 1,
+            total: 20,
+            clickFn: _postPage,
+            pageContClass: 'pagination-page pagination-none',
+            gopageWrapId: 'kkpager_gopage_wrap2', 
+            gopageButtonId: 'kkpager_btn_go2',
+            gopageTextboxId: 'kkpager_btn_go_input2'
+          });
+       //ajax加载
+       function _postPage(n) {
+        //....
+       }
+       </code>  
+       </pre>
+       </div>  
+    </section>  
+    <section>  
+    <h4>最小示例</h4>
+     <div>最小示例参数修改  <code>pageContClass: 'pagination-page pagination-none'</code>  </div>  </section>  
+     <div id="J_Page3" class="pagination-page"></div>
+     <div class="docs-section">
+        <div class="m-example">
+          <h4>HTML</h4>
+        </div>
+          <pre>
+          <code class="language-javascript" data-lang="javascript">
+    // CSS引用 require("./paginnation.css")
+    <div id="J_Page3" class="pagination-page"></div>
+    //js引用 require(['./pagination.js'])
+          </code>
+          </pre>
+      </div>
+     <section>    
+       <h4>链接拼接代码示例</h4>   
+       <div id="J_Page4"></div>
+       <div class="docs-section">
+        <div class="m-example">
+          <h4>HTML</h4>
+        </div>
+          <pre>
+          <code class="language-javascript" data-lang="javascript">
+    // CSS引用 require("./paginnation.css")
+    <div id="J_Page4" class="pagination-page"></div>
+    //js引用 require(['./pagination.js'])
+          </code>
+          </pre>
+      </div>
+      <div class="docs-section">
+        <div class="m-example">
+          <h4>JS</h4>
+        </div>      
+       <pre>  <code class="language-javascript" data-lang="javascript">  
+       //引入分页控件 require('page');
+       //初始化方法  
+       var $page = $('#J_Page4').myPage( {
+         pno: 1,  
+         total: 5,  
+         mode：'link',
+         gopageWrapId: 'kkpager_gopage_wrap3', 
+         gopageButtonId: 'kkpager_btn_go3',
+         gopageTextboxId: 'kkpager_btn_go_input3'  
+         linkFn: _linkPage
+       });
+       //链接拼接  
+       function _linkPage(n) {
+        //前缀
+        var hrefFormer = 'http://www.bossonz.com/?'; 
+        var hrefLatter = 'query=搜索内容page=' + n;//条件
+        return hrefFormer + hrefLatter + '" target="_blank"'
+        //....
+
+       }
+       </code>  
+       </pre> 
+       </div> 
+    </section>
+     <section>    
+       <h4>小分页示例</h4>   
+       <div id="J_Page5" class="pagination-page"></div>
+       <div class="docs-section">
+        <div class="m-example">
+          <h4>HTML</h4>
+        </div>
+          <pre>
+          <code class="language-javascript" data-lang="javascript">
+    // CSS引用 require("./paginnation.css")
+    <div id="J_Page5" class="pagination-page"></div>
+    //js引用 require(['./pagination.js'])
+          </code>
+          </pre>
+      </div>
+      <div class="docs-section">
+        <div class="m-example">
+          <h4>JS</h4>
+        </div>        
+       <pre>  <code class="language-javascript" data-lang="javascript">  
+       //引入分页控件 require('minpage');
+       //初始化方法  
+       var $page5 = $('#J_Page5').myMinPage({
+            pno: 1,
+            total: 10,
+            clickFn: _postPage
+          });
+         //ajax加载
+         function _postPage(n) {
+          //....
+         }
+       </code>  
+       </pre>
+      </div>  
+    </section>
+    <section>    
+       <h4>最简单分页示例</h4>   
+       <div id="J_Page6" class="pagination-page"></div>
+       <div class="docs-section">
+        <div class="m-example">
+          <h4>HTML</h4>
+        </div>
+          <pre>
+          <code class="language-javascript" data-lang="javascript">
+    // CSS引用 require("./paginnation.css")
+    <div id="J_Page6" class="pagination-page"></div>
+    //js引用 require(['./pagination.js'])
+          </code>
+          </pre>
+      </div>
+<div class="docs-section">
+        <div class="m-example">
+          <h4>JS</h4>
+        </div>      
+       <pre>  <code class="language-javascript" data-lang="javascript">  
+       //引入分页控件 require('minpage');
+       //初始化方法  
+       var $page6 = $('#J_Page6').myMinPage({
+            pno: 1,
+            total: 10,
+            isGoPage：false,
+            clickFn: _postPage
+          });
+         //ajax加载
+         function _postPage(n) {
+          //....
+         }
+       </code>  
+       </pre>  
+       </div>
+    </section>
+    </div>
+    #script()
+    require(['./pagination.js'])
+   #end
+    #end   
+    #require("page/examples/paging/pagination.vm")
+#end

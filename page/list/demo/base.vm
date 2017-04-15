@@ -1,0 +1,44 @@
+#extends("/page/layout/frame.vm")
+  #block("body")
+  #require("/page/examples/paging/paginnation.css")  
+  #require("/page/list/demo/list.css")
+  <div class="art-content">
+    <div class="contable classify-table">
+      <div class="title">基本列表</div> 
+      <div class="search" id="search">
+        <header > <span class="J_Search">
+          <input name="q" type="text" placeholder="请输入城事主题" id="searchText" value="$!{searchName}" maxlength='30'/>
+          </span> 类别
+          <select name="type" id="type">
+            <option value="-1">不限 </option>
+            <option value="0">娱乐</option>
+          </select>
+          状态
+          <select name="state" id="state" data-id="$!{searchState}">
+            <option value="-1" >不限</option>
+            <option value="0">下架</option>
+            <option value="1">上架</option>
+          </select>
+          <button type="button" class="btn btn-min btn-info" id="searchBut">搜索</button>
+          <div class="pull-right"> 
+          <a  class="btn btn-min  btn-success"  href="/">添加</a>
+          <button type="button" class="btn btn-min btn-del" id="delAll">删除</button>
+        </header>
+      </div> 
+      #set( $thead = {"checkbox":true,"width":"5%","items":[{"width":"5%","name":"序号"},{"width":"20%","name":"城事主题"},{"width":"18%","name":"时间"},{"width":"27%","name":"分类"},{"width":"5%","name":"状态"},{"width":"20%","name":"操作"}]} )
+
+      
+      #block("m-list")
+        #widget("widget/m-list/m-list.vm" $thead)
+      #end
+    </div>   
+  <div class="a-show-mask m-mask wtag zcvr dn"  id="sharemask"></div>
+  </div>
+#script()
+  require(['./base'])
+#end
+
+  #end
+  ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+  #require("page/list/demo/base.vm")
+#end

@@ -1,0 +1,94 @@
+## 轮播图 API
+## 
+## @author YJL  2015/06/27
+## @description 轮播图 API
+## 
+#extends("/page/layout/frame.vm")
+
+ #require("/static/css/api.css")
+ #block("body")
+<div id="content" class="art-content">
+	<div id="markup">
+		<article id="content" class="markdown-body">
+			<h2>轮播图控件 API 文档</h2>
+			<h4>myCarousel内部参数的详细说明，使用场景多在商城轮播图，后台轮播图设置等。</h4>
+			<blockquote>
+				<p>该轮播图控件依赖于jquery,css需要导入slider.css</p>
+			</blockquote>
+			<p>
+				<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"></p>
+			<h4>参数说明配置项</h4>
+			<ul>
+				<li>
+					<p>
+						<code>width</code>
+						:  {Selector,Number}   [默认值：640]   轮播图的宽度
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>setbtn</code>
+						: {Selector,Boolean}   [默认值：true] 是否要左右按钮
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>liclass</code>
+						: {Selector,String}   [默认值：'on'] 导航的激活样式
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>auto</code>
+						: {Selector,Boolean}  [默认值：'true'] 是否自动轮播
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>time</code>
+						:{Selector,Number}  [默认值：3000] 自动轮播的时间
+					</p>
+				</li>
+			</ul>
+			<blockquote>
+				<p>Selector :可选</p>
+			</blockquote>
+			<h4>暴露函数说明</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>事件名</th>
+						<th>参数说明</th>
+						<th>描述</th>
+						<th>备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>resize</code>
+						</td>
+						<td>
+							<code>width</code>
+							:{Number} 轮播图的宽度
+						</td>
+						<td>重置</td>
+						<td>---</td>
+					</tr>
+					<tr>
+						<td>
+							<code>remove</code>
+						</td>
+						<td>---</td>
+						<td>销毁</td>
+						<td>---</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</article>
+	</div>
+</div>
+#end   
+    #require("page/setting/carousel/api.vm")
+#end

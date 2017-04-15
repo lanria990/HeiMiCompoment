@@ -1,0 +1,12 @@
+<ul class="sidebar">
+	<li><a href="/">首页</a><i class="icon iconfont">&#xe6e7;</i></li>
+	<li><a href="/file">规范</a><i class="icon iconfont">&#xe6e7;</i></li>
+	<li><a href="/icon">icon图标</a><i class="icon iconfont">&#xe6e7;</i></li>
+    <li class="select"><a href="/button">按钮组件</a><i class="icon iconfont">&#xe6e7;</i></li>
+    <li><a href="/pagination">分页组件</a><i class="icon iconfont">&#xe6e7;</i></li>
+    <li><a href="/prompt">提示组件</a><i class="icon iconfont">&#xe6e7;</i></li>    
+    <li><a href="/admin/login">登录组件</a><i class="icon iconfont">&#xe6e7;</i></li>
+    <li><a href="/admin/list">后台列表组件</a><i class="icon iconfont">&#xe6e7;</i></li>
+    <li><a href="/edit">手机详情编辑组件</a><i class="icon iconfont">&#xe6e7;</i></li>
+    <li><a href="/other">其它</a><i class="icon iconfont">&#xe6e7;</i></li>                
+</ul>

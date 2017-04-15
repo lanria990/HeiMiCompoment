@@ -1,0 +1,116 @@
+
+## 选择插件布局		
+## @author YJL 2015/07/8
+##依赖的css有static/css/selectgoods/jquery-selectgoods.css
+
+##
+#extends("/page/layout/frame.vm")
+  #block("body")
+  <div class="art-content">
+  <header class="page-header">
+    <h1>选择组件</h1>
+  </header>
+  <h3>说明</h3>
+  <div class="docs-waring">
+    <ul class="disc-li">
+      <li>依赖的css有query-selectgoods.css</li>
+      <li>下划线开头的方法名为私有函数，不允许调用和重新实例化</li>
+    </ul>
+  </div>
+  <h3>示例Demo</h3>
+  <div class="docs-waring">
+    <ul class="disc-li">
+    <li>查看选择商品Demo<a href="/carousel/admin/index">点击我</a></li>
+    <li>查看选择信息Demo<a href="/carousel/admin/index">点击我</a></li>
+    <li>查看选人Demo<a href="/carousel/admin/index">点击我</a></li>
+    <li>查看列表API<a href="/select/api">点击我</a></li>
+    </ul>
+  </div>
+
+
+  <h3>示例代码</h3>
+
+  <div class="m-example">
+    <h4>HTML代码</h4>
+    </div>
+    <div class="highlight">
+        <pre><code  class="language-html" data-lang="html">
+        <div id='selctPanel'>
+        	<!--选择插件填充-->
+        </div>
+          </code></pre> 
+    </div>
+  </div>
+
+ <div class="docs-section">
+      <div class="m-example" data-example-id="small-well">
+        <h4>JS代码</h4>        
+      </div>
+      <div class="highlight">
+      <pre>
+  <code class="language-javascript" data-lang="javascript">
+
+     require('selectgoods');//加载selectgoods模块
+
+    //选商品初始化
+ 	$('body').mySelect({
+ 		isMultiply: false, //是否多选
+ 		isImg: true, //是否显示图片
+ 		isPrice: true, //价格
+ 		isTime: true,
+ 		boxId: 'selectPan',
+ 		search: {
+ 			isSelect: true, //select框
+ 			isSelectMultiplyLevel: true, //多级分类
+ 			isInput: true, //input框
+ 			isAjax: false, //是否ajax获取多级分类
+ 			selectEmpty: 'empty',
+ 			getSelectData: function() { //获取多级分类ajax参数
+ 			}
+ 		},
+ 		ajaxOption: {
+ 			getSearchData: function() { // 获取搜索数据参数
+ 			},
+ 			ajaxDataFilter: function(res) {
+ 				return res;
+ 			},
+ 			source: '' //分页获取ajax路径
+ 		},
+ 		data: {
+ 			select: [{
+ 				id: '1',
+ 				name: '超市',
+ 				children: 0
+ 			}, {
+ 				id: 2,
+ 				name: '超市1',
+ 				children: 1
+ 			}], //初始化数据
+ 			input: '',
+ 			content: [],
+ 			selectName: ['typeId'],
+ 			selectMultiply: [{
+ 				id: 1,
+ 				name: 'dd',
+ 				parentId: 2
+ 			}]
+ 		},
+ 		pageOption: null,
+ 		fillOption: {
+ 			selector: '.J_Input', //选择器
+ 			fnName: 'focus',
+ 			clickCall: function(data) { //选中回调事件
+
+ 			}
+
+ 		}
+ 	});
+  </code>
+  </pre>
+      </div>
+    </div>
+  </div>
+  #end
+  ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+  #require("page/examples/select/index.vm")
+#end

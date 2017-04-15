@@ -1,0 +1,107 @@
+code {
+  font-family: "Lucida Console", "Monaco", monospace;
+}
+
+pre {
+  font-size: 13px;
+  padding: 0;
+  line-height: 18px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+  background: #f7f7f9;
+  line-height: 24px;
+}
+.docs-section pre{
+  border: none;
+  margin:0;
+  padding: 0;
+}
+pre .close{
+  float: none;
+}
+
+code span {
+  -moz-transition: color .8s ease-in;
+  -o-transition: color .8s ease-in;
+  -webkit-transition: color .8s ease-in;
+  transition: color .8s ease-in;
+}
+
+.animate {
+  color: #fff !important;
+}
+
+.red {
+  color: #f50419;
+}
+
+.orange {
+  color: #f57900;
+}
+
+.yellow {
+  color: #f5e600;
+}
+
+.green {
+  color: #00f50c;
+}
+
+.blue {
+  color: #0081f5;
+}
+
+.indigo {
+  color: #5000f5;
+}
+
+.violet {
+  color: #7d05f5;
+}
+
+.comment {
+  color: #999;
+}
+
+.javascript .comment {
+  color: #535353;
+}
+
+.meta, .entity {
+  color: #f03200;
+}
+
+.support {
+  color: #1e347b;
+}
+
+.string {
+  color:#D14;
+}
+
+.string.regexp {
+  color: #9E3636;
+}
+
+.support.attribute, .support.css-property, .support.regex.modifier {
+  color: teal;
+}
+
+.support.value {
+  color: #1bbbcf;
+}
+
+.integer, .constant {
+  color: #009999;
+}
+
+.keyword, .storage {
+  color: #069;
+}
+
+.constant.regex.escape {
+  color: #d8fa3c;
+}

@@ -1,0 +1,190 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+  min-width: 1200px;
+  font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+a{
+	color: #333;
+	text-decoration: none;
+}
+ul li{
+	list-style: none;
+}
+.header{
+background: #000;
+margin-bottom: 50px;
+}
+.header nav .logo {
+  font-size: 50px;
+  text-decoration: none;
+  color: #fff;
+}
+.header nav {
+  width: 1003px;
+  height: 56px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 500;
+}
+.header nav .logo {
+  display: block;
+  float: left;
+  width: 198px;
+  height: 58px;
+  background-position: 0 0;
+}
+.header nav .navigator {
+  height: 33px;
+  margin-top: 10px;
+  line-height: 35px;
+  color: #4f4f4f;
+  padding: 0;
+  float: right;
+  _position: relative;
+  _left: -100px;
+}
+.header nav ul .current,
+.header nav ul li:hover {
+	background: #fff;
+	  list-style: none;
+	  float: left;
+	  width: 72px;
+	  text-align: center;
+      height: 35px;
+}
+.header .navigator li {
+  list-style: none;
+  float: left;
+  width: 72px;
+  text-align: center;
+  margin-left: 10px;
+
+}
+.header .navigator a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  display:  inline-block;
+}
+.header .navigator .current a,
+.header ul li:hover a{
+  color: #000;
+}
+.container{
+	width: 1120px;
+	margin: 0 auto 30px auto;
+}
+.doc-box{
+	clear: both;
+}
+.content{
+	width: 1003px;
+	margin: 0 auto;
+
+}
+.projects-header {
+  width: 60%;
+  text-align: center;
+  font-weight: 200;
+  margin: 40px auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+.projects-header h2{
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.widget:after{
+  clear: both;
+  display: block;
+  content: "";
+  visibility: visible;
+}
+.widget  li{
+	background: #fff;
+  background: #f7faf9\0/;
+  *background: #f7faf9;
+  border-bottom: 2px solid #f7faf9\0/;
+  *border-bottom: 2px solid #f7faf9;
+  border-radius: 0 0 1px 1px;
+  float: left;
+  margin: 0 19px;
+  margin-bottom: 20px;
+  width: 220px;
+  padding:10px;
+  position: relative;
+  -moz-transition: box-shadow 0.3s;
+  -webkit-transition: box-shadow 0.3s;
+  -o-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  border: 1px solid #ddd;
+}
+.widget  li:hover{
+  box-shadow: 0 2px 8px #bbb;
+}
+.widget  li a{
+  display: block;
+}
+.widget  li a:hover{
+  cursor: pointer;
+}
+.widget  li .widgetul-list {
+  width: 220px;
+  height: 135px;
+  overflow: auto;
+  position: relative;
+  transition: 1s;
+  -moz-transition: 1s;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  
+}
+/* Let's get this party started */
+.widget  li .widgetul-list::-webkit-scrollbar,
+-moz-scrollbar{
+    width:1px;
+}
+
+.widget  li .widgetul-list p{
+  padding: 0 13px 0 14px;
+  word-break: break-all;
+  line-height: 27px;
+  color: #fff;
+  display: table-cell;
+  vertical-align: middle;
+  height: 135px;
+  text-shadow: 0 0 1px #000;
+  /*background: #222;*/
+}
+.widgetul h2 {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+
+
+/*取色*/
+.coone{background: #5A0073;}
+.cotwo{background: #222222;}
+.cothree{background: #1c5ba2;}
+.cofour{background: #017B2E;}
+.cofive{background: #D72735;}
+.co6{background: #BE911C;}
+.co7{background: #BE4D1C;}
+.co8{background:#08886F;}
+
+/*底部*/
+.footer{
+  text-align: center;
+  background: #000;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+}

@@ -1,0 +1,439 @@
+## 选择插件API	
+## @author YJL 2015/07/9
+
+#extends("/page/layout/frame.vm")
+
+ #require("/static/css/api.css")
+ #block("body")
+<div id="content" class="art-content">
+
+	## <div id="markup">
+		## <article id="content" class="markdown-body">
+			<h2>选择控件 API 文档</h2>
+			<h4>mySelect内部参数的详细说明，使用场景多在商城轮播图选择商品，后台轮播图设置选择资讯等。</h4>
+			<blockquote>
+				<p>选择控件控件依赖于jquery,page分页组件,jquery-selectgoods.css</p>
+			</blockquote>
+			<p>
+				## <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"></p>
+			<h4>参数说明配置项</h4>
+			<ul>
+				<li>
+					<p>
+						<code>isMultiply</code>
+						:  {Selector,Boolean}   [默认值：true]   是否多选值
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>isImg</code>
+						: {Selector,Boolean}   [默认值：true] 是否显示图片
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>isPrice</code>
+						: {Selector,Boolean}  [默认值：true] 是否显示价格
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>isTime</code>
+						: {Selector,Boolean}  [默认值：true] 是否显示时间
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>boxId</code>
+						: {Selector,string}  [默认值：'selectPan'] 容器的id，不指定则默认为'selectPan'，多次初始化id相同会导致插件失效
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>source</code>
+						:{Selector,String}  [默认值：''] ajax获取内容路径,分页ajax路径
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>search</code>
+						:{Selector,Object}  , 搜索区域设置
+					</p>
+					<ul>
+						<li>
+							<p>
+								<code>isSelect</code>
+								: {Selector,Boolean}  [默认值：true] 搜索是否开启select选项
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>isSelectMultiplyLevel</code>
+								: {Selector,Boolean}  [默认值：true] 搜索是否开启select多级选项
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>isAjax</code>
+								: {Selector,Boolean}  [默认值：true] 搜索是否开启select ajax获取多级选项 false采用data.selectMultiply 填充
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>selectEmpty</code>
+								: {Selector,string}  [默认值：'empty'] 搜索开启select ajax获取多级分类不限的值
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>selectSource</code>
+								: {Selector,string}  [默认值：''] 搜索ajax获取多级分类ajaxurl
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>getSelectData</code>
+								: {Selector,Function}  ，搜索ajax获取多级分类ajax参数
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>isInput</code>
+								: {Selector,Boolean}  [默认值：true] 搜索是否开启input选项
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						<code>ajaxOption</code>
+						:{Selector,Object}  , 内容获取ajax配置
+					</p>
+					<ul>
+						<li>
+							<p>
+								<code>getSearchData</code>
+								{Selector,Function}  , 获取搜索数据参数
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>ajaxDataFilter</code>
+								{Selector,Function}  ,  获取搜索数据分析
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>source</code>
+								{Selector,String}  ,  Ajax 获取数据的 URL 地址设置固定的异步加载 url 字符串，请注意地址的路径，确保内容能正常加载
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						<code>data</code>
+						:{Selector,Object}  , 初始化数据
+					</p>
+					<ul>
+						<li>
+							<p>
+								<code>select</code>
+								{Selector,Array[Object]}  , [默认值：[]] , 初始化搜索slect数据
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>selectMultiply</code>
+								{Selector,Array}  , [默认值：[]] , 初始化搜索slect 多级数据名称
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>selectName</code>
+								{Selector,Array}  , [默认值：[]] ,初始化搜索slect 多级名称
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>input</code>
+								{Selector,String}  ,[默认值：''] ,初始化搜索input value
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>content</code>
+								{Selector,String}  , [默认值：[]] ,初始化内容区域数据
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						<code>pageOption</code>
+						:{Selector,Object}  , 分页控件文本。 [
+						<code>null</code>
+						||
+						<code>false</code>
+						] 表示不开启分页。具体参照
+						<a href="/pagination/api">分页api文档</a>
+					</p>
+					<ul>
+						<li>
+							<p>
+								<code>pno</code>
+								{Selector,Number}  , 当前页码
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>total</code>
+								{Selector,Number}  , 总页码
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						<code>fillOption</code>
+						:{Selector,Object}  , 填充区域 [
+						<code>null</code>
+						||
+						<code>false</code>
+						] 表示不开启填充区域。
+					</p>
+					<ul>
+						<li>
+							<p>
+								<code>selector</code>
+								{Selector,String}  , [默认值：'.J_Select'] ,选择器
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>fnName</code>
+								{Selector,String}  ,[默认值：'focus'] , 选择器绑定函数
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>clickCall</code>
+								{Selector,Function}  ,填充回调事件
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>
+						<code>lang</code>
+						:{Selector,Object}  , 语言 。
+					</p>
+					<ul>
+						<li>
+							<p>
+								<code>title</code>
+								{Selector,String}  , [默认值：'选择控件'] ,组件标题
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>close</code>
+								{Selector,String}  , [默认值：'X'] ,关闭按钮
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>alt</code>
+								{Selector,String}  , [默认值：'图片'] ,图片alt
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>operat</code>
+								{Selector,String}  , [默认值：'推荐'] ,操作按钮title
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>operatText</code>
+								{Selector,String}  , [默认值：''] ,操作按钮值
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>searchInputText</code>
+								{Selector,String}  , [默认值：''] ,搜索按钮值
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>cancelButton</code>
+								{Selector,String}  , [默认值：'取消'] ,关闭按钮值
+							</p>
+						</li>
+						<li>
+							<p>
+								<code>sureButton</code>
+								{Selector,String}  , [默认值：'保存'] ,确定按钮值
+							</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<blockquote>
+				<p>Selector :可选</p>
+			</blockquote>
+			<p>
+				-
+				<code>pageOption</code>
+			</p>
+			<div class="codehilite">
+				<pre>-   `mode` {Function}  , 模式(click) 内置</pre>
+			</div>
+
+			<h3>函数说明</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>事件名</th>
+						<th>参数说明</th>
+						<th>描述</th>
+						<th>备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>getSelectData</code>
+						</td>
+						<td>this:组件对象指向，需要返回值object对象</td>
+						<td>获取多级分类ajax参数</td>
+						<td>---</td>
+					</tr>
+					<tr>
+						<td>
+							<code>getSearchData</code>
+						</td>
+						<td>this:组件对象指向，需要返回值object对象</td>
+						<td>获取搜索数据参数</td>
+						<td>---</td>
+					</tr>
+					<tr>
+						<td>
+							<code>ajaxDataFilter</code>
+						</td>
+						<td>data:responseDataArray(JSON) / JSON / String</td>
+						<td>用于对 Ajax 返回数据进行预处理的函数</td>
+						<td>---</td>
+					</tr>
+					<tr>
+						<td>
+							<code>clickCall</code>
+						</td>
+						<td>data:点击选中对象值 {Selector,object 或 array[object]}</td>
+						<td>用于捕获单击选中之后的事件回调函数</td>
+						<td>多选为array[object]</td>
+					</tr>
+				</tbody>
+			</table>
+		   <div class="highlight">
+		    <pre>
+				  <code class="language-javascript" data-lang="javascript">
+				 //获取多级分类ajax参数
+				function getSelectData(me){
+				    //me 代表selectOne对象 isAjax:true
+				    //....
+				    return obejct;
+				}
+
+				//获取分页搜索数据参数
+				function getSearchData(me){
+				    //me 代表selectOne对象
+				    //....
+				    return obejct;
+				}
+
+				//分页搜索ajax内容返回值
+				function ajaxDataFilter(data){
+				    //data ajax返回内容对象
+
+				    var array=[];
+				    for(var p in  data){
+				        var o={};
+				        o.id=data[p].fId;
+				        //...
+				        array.push(o);
+				    }
+
+				    //...
+				    return array;//array[obejct]返回值是 selectgoods 支持的JSON 数据结构即可
+				}
+
+				/*
+				 *用于捕获单击选中之后的事件回调函数
+				*/
+				function clickCall(data){
+				    /*
+				     *isMultiply
+				     *  true: data{array[object]}
+				     *  false: data{object}
+				    */  
+				    //...
+				}
+				  </code>
+		  	</pre>
+		  </div>
+
+			<h3>数据格式</h3>
+			<h5>
+				<code>data.content</code>
+				或 搜索ajax返回数据格式必须包含的对象有
+			</h5>
+			<ul>
+				<li>
+					<p>
+						<code>id</code>
+						编号
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>title</code>
+						显示的名称字符串
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>img</code>
+						isImg:true 图片路径
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>time</code>
+						isTime:true 时间
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>price</code>
+						isPrice:true 价格
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>url</code>
+						标题链接的目标 无显示#
+					</p>
+				</li>
+			</ul>
+			## <h2>示例</h2>
+			## <div class="codehilite">
+				
+			## </div>
+		## </article>
+	## </div>
+</div>
+#end   
+    #require("page/examples/select/api.vm")
+#end

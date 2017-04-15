@@ -1,0 +1,59 @@
+## 
+## @author YJL 2015/05/05
+## @description 整理商品添加套餐模块 初始化
+## 
+<div class="sku-style tip3 radius1" id="J_SellProperties">
+  <h3 class="en_h3 dn"><b>商品规格信息</b></h3>
+  <div class="sku-wrap ">
+#foreach( $items in $!{template} )
+  #if( $items.edit ==1 )
+    #set($table="edit")
+  #end 
+  #if( $items.linkImg ==1 )
+    #set($table = "image")
+  #end 
+  #if( $items.edit ==1 && $items.linkImg ==1 )
+    #set($table = "edit image")
+  #end
+  #if( $items.edit !=1 && $items.linkImg !=1 )
+    #set($table = "")
+  #end
+     <div data-caption="${items.name}" data-pid="${items.id}" class="sku-group" data-features="${table}">
+      <div class="sku-title">
+        <label class="sku-label">${items.name}:</label>
+        #if( $items.edit ==1 )
+          <a href="javascript:;" class="sku-modify">修改</a> 
+        #end
+      </div>
+      <div class="sku-box  sku-color">
+        <ul class="sku-list">
+        #foreach( $item in $!{items.attrs} )
+          #if($item.edit==1) 
+            #set($edit="edit")
+          #else
+            #set($edit="")
+          #end
+           <li class="sku-item  #if($item.isChecked==1) ${edit} #end">
+            <input type="checkbox" class="J_Checkbox" name="cp_${items.id}" value="${items.id}:${item.id}" id="prop_${items.id}-${item.id}" 
+              #if($item.isChecked==1) checked="true" #end  data-type="${edit}" />
+                <input type="text" class="editbox text" value="${item.name}" max-length='15' />
+            <label class="labelname" for="prop_${items.id}-${item.id}" title="${item.name}">${item.name}</label>
+          </li>
+        #end
+        </ul>
+      </div>
+      <input type="hidden" id="nav_cp_${items.id}" data-feed="err_NotNull_${items.id}">
+      <div id="err_NotNull_${items.id}" style="display:none;"></div>
+    </div>
+#end
+  </div>
+  <div id="J_SKUColorWrapper" class="sku-wrapper" style="display: none;"></div>
+  <div class="sku-wrapper" style="display: none;">
+    <div class="sku-map" id="J_SKUMapContainer"></div>
+  </div>
+  <div class="sku-mapfeed" style="display: none;">
+    <div class="msg-error"><i class="icon icon-error"></i>
+      <p class="msg"></p>
+    </div>
+  </div>
+</div>

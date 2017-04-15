@@ -1,0 +1,31 @@
+## 轮播图组件布局DEMO
+## @author YJL 2015/06/27
+##
+
+#extends("page/layout/admin.vm")
+
+#block("body")
+#require("static/css/webuploader/webuploader.css")
+#require("static/css/selectgoods/jquery-selectgoods.css")
+<ul class="breadcrumb">
+    <li class="col-md-11"><a>系统管理 &gt; 首页编辑</a></li>
+    <li class="col-md-1"><a class="btn btn-default-border  btn-min" id="publish">发布</a></li>
+</ul>
+
+  <div class="box-index"  id="carType" data-upload="index_carousel" data-base='/admin/usermgr/index/'>
+         #block("m-carousel")
+          #widget("widget/m-carousel/m-carousel.vm" )
+        #end 
+  </div>
+
+
+<div class="a-show-mask m-mask wtag dn zcvr" style="opacity: 0.5;" id="sharemask"></div>
+
+ #script()
+    require(['./index']);
+ #end
+    ## window.typeList = $typeList;
+  #end
+  #require("page/setting/carousel/index.vm")
+#end
+

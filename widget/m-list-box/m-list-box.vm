@@ -1,0 +1,30 @@
+## <link rel="stylesheet" href="page/examples/prompt/prompt.css"> 
+## <div class="mask-tip tip" id="addBox" data-box="input select">
+##   <div class="mask-tip-title">付款提示
+##     <button type="button" class="close J_BClose">×</button>
+##   </div>
+##   <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+##   <div class="mask-tip-btn algin-center">
+##     <button type="button" class="btn btn-success sure J_BSure">确认</button>
+##     <button type="button" class="btn btn-default-border cacel J_BCancel">取消</button>
+##   </div>
+## </div>
+
+ <div class="tip wi400 dn" >
+    <div class="tip-title">添加<a title="关闭" class="pull-right car3 carbg "></a></div>
+
+    <div class="algin-center width100 ma30">
+      <a class="ser_bot radius5 gree J_BSure">确定</a>
+      <a class="ser_bot cacel_bot  left30 J_BCancel">取消</a>
+    </div>
+  </div>
+
+  <div class="tip wi400 dn" id="editBox" data-box="input select">
+    <div class="tip-title">修改<a title="关闭" class="pull-right car3 carbg J_BClose"></a></div>
+
+    <div class="algin-center width100 ma30">
+      <a class="ser_bot radius5 gree J_BSure">确定</a> 
+      <a class="ser_bot cacel_bot  left30 J_BCancel">取消</a>
+    </div>
+  </div>
+  <div class="a-show-mask m-mask wtag zcvr dn" style="opacity: 0.5;" id="sharemask"></div>

@@ -1,0 +1,44 @@
+#extends("/page/layout/frame.vm")
+  #block("body")
+  #require("/page/examples/paging/paginnation.css")  
+  #require("/page/list/demo/list.css")
+  
+  <div class="art-content">
+  ## <div class="classify-bot" id="J_STab">
+  ##       <a class="active">一级</a>
+  ##       <a>二级</a>
+  ##     </div>
+    <div class="contable classify-table">
+      <div class="title">分类列表</div> 
+      <div class="search" id="search">
+        <header > <span class="J_Search">
+          <input name="q" type="text" placeholder="请输入类名" id="searchText" value="$!{search_name}" maxlength='30'/>
+          </span>
+          状态
+          <select name="state" id="state" data-id="$!{search_state}">
+            <option value="-1" >不限</option>
+            <option value="0">下架</option>
+            <option value="1">上架</option>
+          </select>
+          <button type="button" class="btn btn-min btn-info" id="searchBut">搜索</button>
+          <div class="pull-right"> 
+          <button type="button" class="btn  btn-min btn-success" id="add">添加</button>
+          <button type="button" class="btn  btn-min btn-del" id="delAll">删除</button>
+        </header>
+      </div> 
+      #set( $thead = {"checkbox":true,"width":"5%","items":[{"width":"5%","name":"序号"},{"width":"30%","name":"类别"},{"width":"10%","name":"顺序"},{"width":"27%","name":"状态"},{"width":"20%","name":"操作"}]} )      
+      #block("m-list")
+        #widget("widget/m-list/m-list.vm" $thead)
+      #end
+    </div>        
+    #block("m-box")
+      #widget("widget/m-box/m-cbox.vm")
+    #end
+  </div>
+  #script()
+  require(['./classify'])
+#end
+  #end
+  ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+  #require("page/list/demo/classify.vm")
+#end

@@ -1,0 +1,336 @@
+## 列表组件 API
+## 
+## @author YJL  2015/05/11
+## @description 列表组件 API
+## 
+#extends("/page/layout/frame.vm")
+
+ #require("/static/css/api.css")
+ #block("body")
+<div id="content" class="art-content">
+	<h2>列表组件api</h2>
+	<p>bsz.list 内部类的详细说明，以下提及的功能类，都可以在bsz这个变量中访问到.</p>
+	<p>下划线开头的方法名为私有函数，不允许调用和重新实例化</p>
+	<h3>1 列表组件方法</h3>
+	<h4>1.1  bsz.check</h4>
+	<h5>全选/全不选</h5>
+	<table>
+		<thead>
+			<tr>
+				<th>事件名</th>
+				<th>参数说明</th>
+				<th>描述</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<code>init</code>
+				</td>
+				<td>---</td>
+				<td>初始化</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>
+					<code>items</code>
+				</td>
+				<td>---</td>
+				<td>列表选项</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>
+					<code>getCheckedTr</code>
+				</td>
+				<td>---</td>
+				<td>获取已选项</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>
+					<code>setInputAll</code>
+				</td>
+				<td>---</td>
+				<td>设置全选选项</td>
+				<td>---</td>
+			</tr>
+		</tbody>
+	</table>
+	## <pre>  
+ ##        <code class="language-javascript" data-lang="javascript">  
+ ##       	//调用方法
+	## 	bsz.check.init();
+ ##       </code>  
+ ##    </pre>
+
+	<h4>1.2  List</h4>
+	<blockquote>
+		<p>继承CommonListOpt函数</p>
+	</blockquote>
+	<h5>普通列表操作</h5>
+	<table>
+		<thead>
+			<tr>
+				<th>事件名</th>
+				<th>参数说明</th>
+				<th>描述</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<code>_postDel</code>
+				</td>
+				<td>arrayID:{array[number]} id</td>
+				<td>批量删除、单个删除</td>
+				<td>
+					url: <code>delBatchAjax.do</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_postEdit</code>
+				</td>
+				<td>{id}：id</td>
+				<td>修改获取单条信息</td>
+				 <td> url:<code>findDetailAjax.do</code></td>
+			</tr>
+			<tr>
+				<td>
+					<code>_postSave</code>
+				</td>
+				<td>that:{object} List函数域</td>
+				<td>保存单条信息 （添加和修改）</td>
+				<td>
+					url: <code>saveAjax.do</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_postChange</code>
+				</td>
+				<td>{object} data {id:id,state:(0: 下架,1: 上架)}</td>
+				<td>修改状态</td>
+				<td>
+					url: <code>changeAjax.do</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_del</code>
+				</td>
+				<td>---</td>
+				<td>绑定删除事件</td>
+				<td>
+					class: <code>a.J_Del</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_delAll</code>
+				</td>
+				<td>---</td>
+				<td>绑定批量删除</td>
+				<td>
+					id: <code>delAll</code>
+					,必须初始化全选事件
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_search</code>
+				</td>
+				<td>---</td>
+				<td>绑定搜索分页事件</td>
+				<td>
+					id：<code>searchBut</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_add</code>
+				</td>
+				<td>---</td>
+				<td>绑定添加弹窗事件</td>
+				<td>
+					id<code>：add </code> 弹窗id:<code>addBox</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>initEditBox</code>
+				</td>
+				<td>{object} items 单条信息数据</td>
+				<td>获取单条初始化弹窗</td>
+				<td>
+					id<code>:editBox</code>, attr:<code>(data-box,name)</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_edit</code>
+				</td>
+				<td>{object} items 单条信息数据</td>
+				<td>绑定修改和初始化修改弹窗事件</td>
+				<td>
+					弹窗id:<code>editBox</code>
+					,
+					class:<code>J_Edit</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_change</code>
+				</td>
+				<td>---</td>
+				<td>绑定修改状态事件</td>
+				<td>
+					class:<code>a.J_Change</code> attr:<code>(data-state) default：state 0</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_upload</code>
+				</td>
+				<td>---</td>
+				<td>图片上传初始化</td>
+				<td>
+					class：<code>a.J_Upload</code>
+					,
+					formDataValue:<code>data-upload ,id</code>
+					必须不同
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>_page</code>
+				</td>
+				<td>pno：{Number}</td>
+				<td>分页初始化</td>
+				<td>
+					id:<code>pageList</code>
+					,
+					$page分页对象存储
+					<code>$('#pageList').data('page')</code>
+				</td>
+			</tr>
+			<tr>
+				<td><code>init</code></td>
+				<td>opt：{obejct} 参数</td>
+				<td>列表事件初始化</td>
+				<td>
+					<code>opt.base</code>
+					&amp;&amp;
+					<code>opt.tableTplFn</code>
+					&amp;&amp;
+					<code>opt.getPostData</code>
+					必填，
+					<code>opt.fn</code>
+					：初始化事件名称
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+		<p>opt.fn值</p>
+			
+	<ul>
+		<li>
+			<p>
+				<code>search</code>:搜索
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>delAll</code>
+				：批量删除
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>add</code>
+				: 添加弹窗事件
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>page</code>
+				: 分页初始化
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>del</code>
+				: 绑定删除事件
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>edit</code>
+				: 绑定修改和初始化修改弹窗事件
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>upload</code>
+				: 图片上传初始化
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>change</code>
+				: 修改状态事件
+			</p>
+		</li>
+	</ul>
+
+	## <p>示例：</p>
+	## <pre>  
+ ##        <code class="language-javascript" data-lang="javascript">  
+ ##        var bsz = require('widget/m-list/bsz.list.js'); //加载list模块
+	## 	 var tableTplFn = __inline('/static/libs/list/_baseTb.tmpl') //加载列表模板
+ 
+	## 	 require('upload') //加载upload
+	## 	 require('page') //加载分页组件
+
+	## 	/**
+	## 	 * 获取分页查询ajax参数
+	## 	 * @return {object} ajax参数
+	## 	 */
+	## 	 function getPostData() {
+	## 	 	var o = {};
+	## 	 	o.page = $('#pageList').data('page').getNowPage();//获取当前页
+	## 	 	o.name = $('#searchText').val();
+	## 	 	return o;
+	## 	 }
+
+	## 	/**
+	## 	 * 获取添加或修改弹窗ajax参数
+	## 	 * @param  {object} obj 弹窗指向
+	## 	 * @return {obejct}     ajax参数
+	## 	 */
+	## 	 function getData(obj) {
+	## 	 	var o = {};
+	## 	 	return o;
+	## 	 }
+
+
+	## 	 bsz.check.init();//初始化全选事件
+	## 	 	var list = new bsz.list();//初始化列表事件
+	## 	 	list.init({
+	## 	 		tableTplFn: tableTplFn,
+	## 	 		getPostData: getPostData,
+	## 	 		geData: getData,
+	## 	 		base: '/admin/list/',//基本路径
+	## 	 		fn: ['search', 'delAll', 'add', 'page', 'del', 'edit']//初始化函数
+	## 	 	})
+ ##       </code>  
+ ##       </pre>
+
+</div>
+#end   
+    #require("page/examples/paging/paging-api.vm")
+#end

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+#html("static/js/mod-amd.js" )
+<html lang="zh-CN">
+    #head()
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit"> 
+        <title></title>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        #require("page/examples/icon/font.css")
+        #require("/static/css/layout.css")
+        #require("page/examples/button/button.css")    
+            
+    #end## end head
+     #body()
+     <ul class="breadcrumb-nav">
+        <li class="col-md-11"><a href='/'>返回首页</a></li>
+        <li class="col-md-11"><a href='/carousel/index'>轮播图</a></li>
+        <li class="col-md-11"><a href='/admin/list'>列表组件</a></li>
+        <li class="col-md-1"><a href='/file' target='_blank'>规范</a></li>
+    </ul>
+            ## 定义一个区域
+            #block("body")
+            #end
+    #end## end of body
+
+    ## 代码高亮插件
+    ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+    #require("page/layout/admin.vm")
+
+#end## end of html

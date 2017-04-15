@@ -1,0 +1,37 @@
+## 小模块组件布局
+## @author LYY 2015/05/06
+## @description 状态组件css命名全以sta-开头   
+##
+#extends("/page/layout/frame.vm")
+#block("body") 
+<div class="art-content">
+  <header class="page-header">
+    <h1>其它</h1>
+  </header>
+  <h3>状态组件</h3>
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>html结构说明及demo</h4>
+      <ul class="text-doc">
+        <li>未开始：<span class="sta-nostart">sta-nostart</span></li>
+        <li>进行中：<span class="sta-doing">sta-doing</span></li>
+        <li>开始失败：<span class="sta-fail">sta-fail</span></li>
+        <li>开始完成：<span class="sta-complete">sta-complete</span></li>
+        <li>删除：<span class="sta-del">sta-del</span></li>
+      </ul>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <span class="sta-nostart">sta-nostart</span>
+    <span class="sta-doing">sta-doing</span>
+    <span class="sta-fail">sta-fail</span>
+    <span class="sta-complete">sta-complete</span>
+    <span class="sta-del">sta-del</span> 
+    </code></pre>
+    </div>
+  </div>
+</div>
+ 
+    #end
+    #require("page/examples/other/other.vm")
+#end

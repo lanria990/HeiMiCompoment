@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="m-box.css"> 
+<div class="mask-tip mask-tip-defualt tip dn" id="addBox" data-box="input select">
+ <div class="dialog">
+ <div class="mask-tip-title">添加
+    <button type="button" class="close J_BClose" title="关闭">×</button>
+  </div>
+  <div class="mask-tip-con">
+    
+  </div>
+  <div class="mask-tip-btn algin-center">
+    <button type="button" class="btn btn-success sure J_BSure">确认</button>
+    <button type="button" class="btn btn-default-border cacel J_BCancel">取消</button>
+  </div>
+  </div>
+</div>
+
+<div class="mask-tip mask-tip-defualt tip dn" id="editBox" data-box="input select">
+ <div class="dialog">
+ <div class="mask-tip-title">修改
+    <button type="button" class="close J_BClose" title="关闭">×</button>
+  </div>
+  <div class="mask-tip-con algin-center"></div>
+  <div class="mask-tip-btn algin-center">
+    <button type="button" class="btn btn-success sure J_BSure">确认</button>
+    <button type="button" class="btn btn-default-border cacel J_BCancel">取消</button>
+  </div>
+  </div>
+</div>
+  <div class="a-show-mask m-mask wtag zcvr dn"  id="sharemask"></div>

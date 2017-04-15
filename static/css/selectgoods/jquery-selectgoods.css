@@ -1,0 +1,159 @@
+/**
+ * 选择组件css
+ * @author YJL 2015-07-09
+ *
+ */
+div,p,a,img{
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+.dn{
+	display: none;
+}
+.choose-box{
+	position: absolute;
+	/*display: none;*/
+	width: auto;
+	background: #fff;
+	border-radius: 5px;
+	min-width: 400px;
+	overflow: hidden;
+	border: 1px solid #6F796A;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	top: 5%;
+  	left: 22%;
+  	z-index: 1001;
+}
+.choose-box .choose-title{
+	position: relative;
+	z-index: 1001;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	padding-left: 10px;
+	border-bottom: 1px solid #6F796A;
+	background: #E6E6E6;
+}
+.choose-box .choose-title span:last-child{
+	float: right;
+	right: 10px;
+	position: relative;
+	cursor: pointer;
+}
+.choose-search{
+	width: 100%;
+	margin: 10px;
+	position: relative;
+	
+}
+.choose-search .choose-select,
+.choose-search .choose-input{
+	position: relative;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.choose-search .choose-input{
+	float: right;
+	right: 25px;
+}
+.choose-search .choose-input input{
+	width: 150px;
+	padding: 8px;
+}
+.choose-search .choose-select{
+	float: left;
+}
+.choose-search .choose-select select{
+	padding: 8px;
+	border: none;
+}
+
+.choose-search .choose-input a{
+	padding: 10px;
+  	margin-right: 5px;
+}
+.choose-content{
+	padding: 10px 15px;
+}
+.choose-content ul li {
+	float: left;
+}
+.choose-url{
+	/*width: 150px;*/
+	/*margin: 0 auto;*/
+	text-align: center;
+}
+.choose-url a{
+	display: inline-block;
+	background: #ccc;
+	color: #fff;
+	border-radius: 5px;
+	padding: 10px 15px;
+	margin-right: 10px;
+	line-height: 15px;
+}
+
+.choose-url a.selected,.choose-url a:hover{
+	background: #000;
+}
+
+.choose-box .choose-control{
+	position: relative;
+	z-index: 1001;
+	min-height: 300px;
+}
+.choose-search,.choose-pic,.choose-detail,.choose-operation{
+	float: left;
+}
+
+.choose-pic img{
+	width: 50px;
+	height: 50px;
+}
+.choose-item{
+	width: 450px;
+
+}
+.choose-detail{
+	width: 300px;
+}
+.choose-detail img{
+	border: 0;
+}
+
+.choose-detail-price,.choose-detail-title{
+  float: left;
+  width: 100%;
+}
+
+.choose-detail-symbol{
+	color: red;
+}
+
+.choose-btn{
+	margin-right: 20px;
+	position: relative;
+	bottom: 0;
+}
+.s-mask{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	background: #000;
+	opacity: .5;
+}
+
+
+.choose-search:after,.choose-line:after,.choose-detail:after{
+	content: '';
+	overflow: hidden;
+	clear:both;
+	width: 0;
+	height: 0;
+	display: block;
+	visibility: visible;
+}

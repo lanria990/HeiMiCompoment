@@ -1,0 +1,30 @@
+## 
+## @author YJL 2015/04/27
+## @description 整理列表组件模块全部 
+## 
+<div class="tables_wrap J_Table">
+  <div class="dn" id="lCont">
+    <table>
+      <thead>
+        <tr>
+        #if( $!{thead.checkbox})
+          <th width="$thead.width"> <input name="checkAll" type="checkbox" value=""></th>
+        #end
+        #foreach( $item in $!{thead.items} )
+          <th width="$item.width">$item.name</th>
+        #end
+        </tr>
+      </thead>
+      <tbody id="container">
+      </tbody>
+    </table>
+    <div class="tfoot"> 
+      <div id="pageList"></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+  <div id="loading">
+    <i class="icon iconfont loading"></i>
+  </div>
+</div>
+

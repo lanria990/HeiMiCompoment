@@ -1,0 +1,271 @@
+## 分页组件布局
+#set($title = "超市商品评论-邻亲")
+#extends("/page/layout/frame.vm")
+    #block("body")
+    ## #require("page/examples/prompt/prompt.css")   
+    #require("page/examples/button/button.css")
+    #require("/widget/m-box/m-box.css") 
+<div class="art-content">
+  <header class="page-header">
+    <h1>提示组件</h1>
+  </header>
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>Demo1</h4>
+      <p class="text-doc">绿色皮肤提示框加样式名：<span class="sta-del">mask-tip-gree</span></p>
+      <button class="btn btn-success" type="button" id="mask-tip-btngree">绿色皮肤提示框点击我</button>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip mask-tip-gree">
+      <div class="mask-tip-title">付款提示<button type="button" class="close">×</button></div>                  
+      <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+      <div class="mask-tip-btn algin-center">
+        <button type="button" class="btn btn-success sure">确认</button>
+        <button type="button" class="btn btn-default-border cacel">关闭</button>
+      </div>
+    </div> 
+    </code></pre>
+    </div>
+  </div>
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>Demo2</h4>
+      <p class="text-doc">灰色提示框默认样式名：<span class="sta-del">mask-tip</span></p>
+      <button class="btn btn-default-border" type="button" id="mask-tip-btndefualt">灰色皮肤提示框点击我</button>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip">
+      <div class="mask-tip-title">付款提示<button type="button" class="close">×</button></div>                  
+      <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+      <div class="mask-tip-btn algin-center">
+        <button type="button" class="btn btn-success sure">确认</button>
+        <button type="button" class="btn btn-default-border cacel">关闭</button>
+      </div>
+    </div>
+    </code></pre>
+    </div>
+  </div>
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>Demo3</h4>
+      <p class="text-doc">带有小图标的提示框加样式名：<span class="sta-del">mask-tip-icon</span></p>
+      <button class="btn btn-info" type="button" id="mask-tip-icon">带有小图标的提示框点击我</button>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip mask-tip-icon">
+      <div class="mask-tip-title">&lt;i class="iconfont"&gt;#xe672;&lt;/i&gt;</i>付款提示<button type="button" class="close">×</button>
+      </div>                  
+      <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+      <div class="mask-tip-btn algin-center">
+        <button type="button" class="btn btn-success sure">确认</button>
+        <button type="button" class="btn btn-default-border cacel">关闭</button>
+      </div>
+    </div>
+    </code></pre>
+    </div>
+  </div>
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>Demo4</h4>
+      <p class="text-doc">带有小图标内容左对齐按钮右对齐的提示框加样式名：<span class="sta-del">mask-tip-algin</span></p>
+      <button class="btn btn-success" type="button" id="mask-tip-algin">带有小图标字左对齐按钮右对齐的提示框点击我</button>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip mask-tip-algin">
+      <div class="mask-tip-title">&lt;i class="icon iconfont"&gt;#xe672;&lt;/i&gt;付款提示<button type="button" class="close">×</button>
+      </div>                  
+        <div class="mask-tip-con algin-center">
+          <ul>
+            <li>保险费</li>
+            <li>快递费</li>
+          </ul>
+        </div>
+        <div class="mask-tip-btn algin-right">
+          <button type="button" class="btn btn-success sure">确认</button>
+          <button type="button" class="btn btn-default-border cacel">关闭</button>
+        </div>
+      </div>    
+    </code></pre>
+    </div>
+  </div>
+  ## 操作提示块开始
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>操作提示html结构说明及demo</h4>
+      <ul class="text-doc">
+        <li>成功icon：<span class="sta-del">&lt;i class="icon iconfont fail"&gt;xe672;&lt;/i&gt;</span></li>
+        <li>错误icon:<span class="sta-del">&lt;i class="icon iconfont error"&gt;xe672;&lt;/i&gt;</span></li>
+        <li>失败icon:<span class="sta-del">&lt;i class="icon iconfont success"&gt;xe61a;&lt;/i&gt;</span></li>
+      </ul>
+      <button class="btn btn-info" type="button" id="mask-tip-operation">操作提示框点击我</button>
+    </div>
+    <div class="highlight" style="margin-bottom:15px;">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip mask-tip-operation">
+      <div class="mask-tip-title">提示<button type="button" class="close">×</button></div>                  
+      <div class="mask-tip-con algin-center">
+          <i class="icon iconfont error mar">&#xe672;</i>
+          <p>注册出错</p>
+      </div>
+      <div class="mask-tip-btn algin-center">
+        <button type="button" class="btn btn-default-border cacel">关闭</button>
+      </div>
+    </div>  
+    </code></pre>
+    </div>
+    <div class="m-example">
+      <button class="btn btn-info" type="button" id="mask-tip-operations">操作提示框点击我</button>
+    </div>
+    <div class="highlight" style="margin-bottom:15px;">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip mask-tip-operation">
+      <div class="mask-tip-title">提示<button type="button" class="close">×</button></div>                  
+      <div class="mask-tip-con algin-center">
+        <i class="icon iconfont success mar">&#xe672;</i>
+        <p>注册成功</p>
+      </div>
+      <div class="mask-tip-btn algin-center">
+        <button type="button" class="btn btn-default-border cacel">关闭</button>
+      </div>
+    </div>   
+    </code></pre>
+    </div>
+    <div class="m-example">
+      <button class="btn btn-info" type="button" id="mask-tip-time">操作提示框带倒计时点击我</button>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <div class="mask-tip mask-operation mask-tip-time">
+      <div class="mask-tip-title title-background"><button type="button" class="close">×</button></div>                  
+      <div class="mask-tip-con algin-center">
+        <i class="icon iconfont fail mar">&#xe61a;</i>
+        <p>注册失败</p>
+      </div>
+      <div class="mask-tip-btn algin-center">
+        <button type="button" class="btn btn-default-border cacel">关闭
+        <i>(5)</i></button>
+      </div>
+    </div>   
+    </code></pre>
+    </div>
+  </div>
+  ## 普通提示块开始
+  <div class="docs-section">
+    <div class="m-example">
+      <h4>普通提示html结构说明及demo</h4>
+      <ul class="text-doc">
+        <li>成功icon：<span class="sta-del">&lt;i class="icon iconfont fail"&gt;xe672;&lt;/i&gt;</span></li>
+        <li>错误icon:<span class="sta-del">&lt;i class="icon iconfont error"&gt;xe672;&lt;/i&gt;</span></li>
+        <li>失败icon:<span class="sta-del">&lt;i class="icon iconfont success"&gt;xe6ea;&lt;/i&gt;</span></li>
+        <li>加载icon:<span class="sta-del">&lt;i class="icon iconfont loading"&gt;&lt;/i&gt;</span></li>
+      </ul>
+      <div class="tip-min"> <i class="icon iconfont fail">&#xe6ea;</i><i>发送失败</i> </div>
+      <div class="tip-min"> <i class="icon iconfont error">&#xe672;</i><i>发送错误</i> </div>
+      <div class="tip-min"> <i class="icon iconfont success">&#xe684;</i><i>发送成功</i> </div>
+      <div class="tip-min"> <i class="icon iconfont loading"></i><i>加載中</i> </div>
+    </div>
+    <div class="highlight">
+      <pre><code class="language-html" data-lang="html">
+    <div class="tip-min">
+      <i class="icon iconfont loading"></i><i>发送成功</i>
+    </div>   
+    </code></pre>
+    </div>
+  </div>
+  ## 隐藏弹窗开始
+  <div class="mask-tip mask-operation mask-tip-time">
+    <div class="mask-tip-title title-background">
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center"><i class="icon iconfont mar fail">&#xe6ea;</i>
+      <p>注册失败</p>
+    </div>
+    <div class="mask-tip-btn algin-center">
+      <button type="button" class="btn btn-default-border cacel">关闭 <i>(5)</i></button>
+    </div>
+  </div>
+  <div class="mask-tip mask-operation mask-tip-operations">
+    <div class="mask-tip-title title-background">
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center"><i class="icon iconfont mar success">&#xe684;</i>
+      <p>注册成功</p>
+    </div>
+    <div class="mask-tip-btn algin-center">
+      <button type="button" class="btn btn-default-border cacel">关闭</button>
+    </div>
+  </div>
+  <div class="mask-tip mask-operation mask-tip-operation">
+    <div class="mask-tip-title">提示
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center"><i class="icon iconfont  mar error">&#xe672;</i>
+      <p>注册出错</p>
+    </div>
+    <div class="mask-tip-btn algin-center">
+      <button type="button" class="btn btn-default-border cacel">关闭</button>
+    </div>
+  </div>
+  <div class="mask-tip mask-tip-algin">
+    <div class="mask-tip-title"><i class="icon iconfont">&#xe672;</i>付款提示
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center">
+      <ul>
+        <li>保险费</li>
+        <li>快递费</li>
+      </ul>
+    </div>
+    <div class="mask-tip-btn algin-right">
+      <button type="button" class="btn btn-success sure">确认</button>
+      <button type="button" class="btn btn-default-border cacel">关闭</button>
+    </div>
+  </div>
+  <div class="mask-tip mask-tip-gree">
+    <div class="mask-tip-title">付款提示
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+    <div class="mask-tip-btn algin-center">
+      <button type="button" class="btn btn-success sure">确认</button>
+      <button type="button" class="btn btn-default-border cacel">关闭</button>
+    </div>
+  </div>
+  <div class="mask-tip mask-tip-defualt">
+    <div class="mask-tip-title">付款提示
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+    <div class="mask-tip-btn algin-center">
+      <button type="button" class="btn btn-success sure">确认</button>
+      <button type="button" class="btn btn-default-border cacel">关闭</button>
+    </div>
+  </div>
+
+  <div class="mask-tip mask-tip-icon">
+    <div class="mask-tip-title"><i class="icon iconfont">&#xe672;</i>付款提示
+      <button type="button" class="close">×</button>
+    </div>
+    <div class="mask-tip-con algin-center">您确定要付款吗？</div>
+    <div class="mask-tip-btn algin-center">
+      <button type="button" class="btn btn-success sure">确认</button>
+      <button type="button" class="btn btn-default-border cacel">关闭</button>
+    </div>
+  </div>
+</div>
+  ## #block("m-alert-bsz")
+  ##     #widget("widget/m-alert-bsz/m-alert-bsz.vm")
+  ## #end
+
+    ## 遮罩层开始
+    <div class="fade m-mask dn"></div>
+    #script()
+      require(['./prompt']);
+    #end
+    #end    
+    #require("page/examples/prompt/prompt.vm")
+#end

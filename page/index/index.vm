@@ -1,0 +1,262 @@
+## 组件首页
+## @author LYY 2015/06/03
+## @description 组件入口首页
+##
+#set($title = "组件入口首页-博森")
+#extends("/page/layout/frametwo.vm")
+#block("body")
+<div class="container"> 
+  <div class="doc-content">
+    <div class="doc-box">
+     <div class="projects-header page-header">
+        <h2>HeiMi 常用组件块</h2>
+        <p>这些组件是基于fis开发,js、css之间有一定的依赖关系</p>
+      </div>
+      <ul class="widget">
+        <li class="widgetul"> 
+          <a href="/button">
+            <div class="widgetul-list coone">            
+            <p>此组件提供了基本按钮、导航按钮、字体按钮、更多类型按钮</p>
+            </div>
+            <h2>按钮组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/icon">
+            <div class="widgetul-list cotwo">            
+            <p>提供了网页中常用的图标及使用方式</p>
+            </div>
+            <h2>icon图标</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/pagination">
+            <div class="widgetul-list cothree">            
+            <p>提供了五种分页组件及相应的api文档和使用方式。</p>
+            </div>
+            <h2>分页组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/prompt">
+            <div class="widgetul-list cofour">            
+            <p>提供显隐关闭、遮罩层、内容区域自定义以及模态对话框等功能。</p>
+            </div>
+            <h2>提示组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/admin/login">
+            <div class="widgetul-list co8">            
+            <p>提供了用户名密码登录，登录校验等功能。</p>
+            </div>
+            <h2>登录组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/admin/list">
+            <div class="widgetul-list co7">            
+            <p>提供了分类列表，评论列表和基本列表三种，其功能包括搜索、添加、修改、删除、状态改变。</p>
+            </div>
+            <h2>列表组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/edit">
+            <div class="widgetul-list co6">            
+            <p>其功能包括添加文字图文，和相应的操作。</p>
+            </div>
+            <h2>手机编辑器</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/other">
+            <div class="widgetul-list cofive">            
+            <p>此块包括一些常用状态的样式，提示样式等。</p>
+            </div>
+            <h2>其它</h2>  
+          </a> 
+        </li>
+
+
+      </ul>
+    </div>
+
+    ## 备用
+    <div class="doc-box">
+     <div class="projects-header page-header">
+        <h2>HeiMi 轮播图</h2>
+        <p>这些组件是基于fis开发,js、css之间有一定的依赖关系</p>
+      </div>
+      <ul class="widget">
+        <li class="widgetul"> 
+          <a href="/carousel/index">
+            <div class="widgetul-list coone">            
+            <p>jQuery轮播插件</p>
+            </div>
+            <h2>jQuery轮播插件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/select/index">
+            <div class="widgetul-list cotwo">            
+            <p>jQuery 选择控件 </p>
+            </div>
+            <h2>jQuery 选择控件 </h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/pagination">
+            <div class="widgetul-list cothree">            
+            <p>提供了五种分页组件及相应的api文档和使用方式。</p>
+            </div>
+            <h2>分页组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/prompt">
+            <div class="widgetul-list cofour">            
+            <p>提供显隐关闭、遮罩层、内容区域自定义以及模态对话框等功能。</p>
+            </div>
+            <h2>提示组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/admin/login">
+            <div class="widgetul-list co8">            
+            <p>提供了用户名密码登录，登录校验等功能。</p>
+            </div>
+            <h2>登录组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/admin/list">
+            <div class="widgetul-list co7">            
+            <p>提供了分类列表，评论列表和基本列表三种，其功能包括搜索、添加、修改、删除、状态改变。</p>
+            </div>
+            <h2>列表组件</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/edit">
+            <div class="widgetul-list co6">            
+            <p>其功能包括添加文字图文，和相应的操作。</p>
+            </div>
+            <h2>手机编辑器</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/other">
+            <div class="widgetul-list cofive">            
+            <p>此块包括一些常用状态的样式，提示样式等。</p>
+            </div>
+            <h2>其它</h2>  
+          </a> 
+        </li>
+
+
+      </ul>
+    </div>
+
+
+    ## 备用
+    ## <div class="doc-box">
+    ##  <div class="projects-header page-header">
+    ##     <h2>HeiMi 插件组件块</h2>
+    ##     <p>这些组件是基于fis开发,js、css之间有一定的依赖关系</p>
+    ##   </div>
+    ##   <ul class="widget">
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list coone">            
+    ##         <p>此组件提供了基本按钮、导航按钮、字体按钮、更多类型按钮</p>
+    ##         </div>
+    ##         <h2>按钮组件</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list cotwo">            
+    ##         <p>提供了网页中常用的图标及使用方式</p>
+    ##         </div>
+    ##         <h2>icon图标</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list cothree">            
+    ##         <p>提供了五种分页组件及相应的api文档和使用方式。</p>
+    ##         </div>
+    ##         <h2>分页组件</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list cofour">            
+    ##         <p>提供显隐关闭、遮罩层、内容区域自定义以及模态对话框等功能。</p>
+    ##         </div>
+    ##         <h2>提示组件</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list co8">            
+    ##         <p>提供了用户名密码登录，登录校验等功能。</p>
+    ##         </div>
+    ##         <h2>登录组件</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list co7">            
+    ##         <p>提供了分类列表，评论列表和基本列表三种，其功能包括搜索、添加、修改、删除、状态改变。</p>
+    ##         </div>
+    ##         <h2>列表组件</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list co6">            
+    ##         <p>其功能包括添加文字图文，和相应的操作。</p>
+    ##         </div>
+    ##         <h2>手机编辑器</h2>  
+    ##       </a> 
+    ##     </li>
+
+    ##     <li class="widgetul"> 
+    ##       <a>
+    ##         <div class="widgetul-list cofive">            
+    ##         <p>此块包括一些常用状态的样式，提示样式等。</p>
+    ##         </div>
+    ##         <h2>其它</h2>  
+    ##       </a> 
+    ##     </li>
+
+
+    ##   </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">©2014 bossonz 闽ICP备14003550号</div>
+#end
+#end

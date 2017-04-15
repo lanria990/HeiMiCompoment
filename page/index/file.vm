@@ -1,0 +1,207 @@
+
+## @author LYY 2015/06/03
+## @description 规范文件首页
+##
+#set($title = "规范文件-博森")
+#extends("/page/layout/frametwo.vm")
+#block("body")
+<link rel="stylesheet" type="text/css" href="./index.css">
+<div class="container"> 
+  <div class="doc-content">
+    <div class="doc-box">
+     <div class="projects-header page-header">
+        <h2>前端规范文件</h2>
+        <p>有区分强制和建议,如果备注为强制就必须严格遵循。</p>
+      </div>
+      <ul class="widget">
+        <li class="widgetul"> 
+          <a href="/port/web/components">
+            <div class="widgetul-list coone">            
+            <p>组件是一种处理复杂系统分解成为更好的可管理模块的方式</p>
+            </div>
+            <h2>组件规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/port/web/javascript">
+            <div class="widgetul-list cotwo">            
+            <p>为了提高代码的易读性,统一性,所有前端员工必须严格按遵循规范</p>
+            </div>
+            <h2>javascript规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/port/web/htmlcss">
+            <div class="widgetul-list cothree">            
+            <p>为了提高代码的易读性,统一性,所有前端员工必须严格按遵循规范</p>
+            </div>
+            <h2>css规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/share/index">
+            <div class="widgetul-list co8">            
+            <p>本模块是前端技术分享区,包括css,js,和前端框架</p>
+            </div>
+            <h2>前端技术分享</h2>  
+          </a> 
+        </li>
+      </ul>
+    </div>
+
+    ## 接口
+    <div class="doc-box">
+     <div class="projects-header page-header">
+        <h2>接口规范文件</h2>
+        <p>提示暂定</p>
+      </div>
+      <ul class="widget">
+
+        <li class="widgetul"> 
+          <a href="/port/web/markdown">
+            <div class="widgetul-list co8">            
+            <p>此为前端开发团队遵循和约定的 **Markdown 编写规范**，意在提高文档的可读性</p>
+            </div>
+            <h2>Markdown 编写规范</h2>  
+          </a> 
+        </li>
+
+        ## <li class="widgetul"> 
+        ##   <a href="/port/android/port">
+        ##     <div class="widgetul-list co7">            
+        ##     <p>本文档的目标是使接口代码风格保持一致，容易被理解和被维护</p>
+        ##     </div>
+        ##     <h2>手机-后台接口规范</h2>  
+        ##   </a> 
+        ## </li>
+
+        <li class="widgetul"> 
+          <a href="/port/web/port">
+            <div class="widgetul-list co6">            
+            <p>本文档的目标是使接口代码风格保持一致，容易被理解和被维护</p>
+            </div>
+            <h2>接口规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/port/web/version">
+            <div class="widgetul-list cofive">            
+            <p>语义化版本2.0.0</p>
+            </div>
+            <h2>版本号规范</h2>  
+          </a> 
+        </li>
+        <li class="widgetul"> 
+          <a href="/port/web/design">
+            <div class="widgetul-list cofive">            
+            <p>布局 所有可操作元素最小点击区域尺寸：48dp X 48dp。</p>
+            </div>
+            <h2>设计规范</h2>  
+          </a> 
+        </li>
+
+      </ul>
+    </div>
+
+    ## 后端
+    <div class="doc-box">
+     <div class="projects-header page-header">
+        <h2>后端规范文件</h2>
+        <p>提示暂定</p>
+      </div>
+      <ul class="widget">
+
+        <li class="widgetul"> 
+          <a href="/port/backstage/java">
+            <div class="widgetul-list co8">            
+            <p>这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则， 我们才认为它符合Google的Java编程风格</p>
+            </div>
+            <h2>java规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="/port/backstage/database">
+            <div class="widgetul-list co7">            
+            <p>1. 基础规范1. 全部使用InnoDB引擎, MyISAM适用场景非常小。...</p>
+            </div>
+            <h2>数据库规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="">
+            <div class="widgetul-list co6">            
+            <p>说明各组长自己定。。。。</p>
+            </div>
+            <h2>后台接口规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a>
+            <div class="widgetul-list cofive">            
+            <p>说明各组长自己定。。。。</p>
+            </div>
+            <h2>后台技术分享</h2>  
+          </a> 
+        </li>
+
+
+      </ul>
+    </div>
+
+
+    ## 移动端规范文件
+    <div class="doc-box">
+     <div class="projects-header page-header">
+        <h2>移动端规范文件</h2>
+        <p>提示暂定</p>
+      </div>
+      <ul class="widget">
+        <li class="widgetul"> 
+          <a href="/port/android">
+            <div class="widgetul-list coone">            
+            <p>说明各组长自己定。。。。</p>
+            </div>
+            <h2>android代码规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="">
+            <div class="widgetul-list cotwo">            
+            <p>说明各组长自己定。。。。</p>
+            </div>
+            <h2>android技术分享</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="">
+            <div class="widgetul-list cothree">            
+            <p>说明各组长自己定。。。。</p>
+            </div>
+            <h2>ios代码规范</h2>  
+          </a> 
+        </li>
+
+        <li class="widgetul"> 
+          <a href="">
+            <div class="widgetul-list cofour">            
+            <p>说明各组长自己定。。。。</p>
+            </div>
+            <h2>ios技术分享</h2>  
+          </a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">©2014 bossonz 闽ICP备14003550号</div>
+#end
+#end

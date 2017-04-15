@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+#html("static/js/mod-amd.js" )
+<html lang="zh-CN">
+    #head()
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit"> 
+        <title></title>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        #require("page/examples/icon/font.css")
+        #require("/static/css/layout.css")
+        #require("page/examples/button/button.css")    
+        #require("/static/css/rainbow.css")   
+            
+    #end## end head
+    #block("header")
+            #widget("widget/header/header.vm")
+    #end
+     #body()
+         <div class="container">
+             ## 左边导航块
+             #block("header")
+                #widget("page/examples/nav-left/nav.vm")
+             #end
+            ## 定义一个区域
+            #block("body")
+            #end
+         </div>
+    #end## end of body
+
+    #script()
+    require(['./frame']);
+    #end
+    ## 代码高亮插件
+    <script src="/static/rainbow/rainbow-custom.js"></script>
+    ## <script src="/static/prettify/prettify.js"></script>
+    ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+    #require("page/layout/frame.vm")
+
+#end## end of html

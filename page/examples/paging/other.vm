@@ -1,0 +1,36 @@
+## 分页组件布局
+#extends("/page/layout/frame.vm")
+    #block("body")
+    #require("static/css/component/button.css")   
+        <div class="container">
+            <ul class="sidebar">
+                <li><a href="/button.do">按钮组件</a><i>></i></li>
+                <li><a href="/pagination.do">分页组件</a><i>></i></li>
+                <li class="select"><a href="/other.do">混合组件</a><i>></i></li>
+                <li><a href="/prompt.do">提示组件</a><i>></i></li>
+                <li><a href="/icon.do">icon图标</a><i>></i></li>
+            </ul>
+            <section class="art-content">
+                <header class="page-header"><h1>混合组件</h1></header>
+                <h3>状态组件</h3>
+                <h4>Demo</h4>
+                <div>未开始：<span class="sta-nostart">sta-nostart</span>
+                进行中：<span class="sta-doing">sta-doing</span>
+                开始失败：<span class="sta-fail">sta-fail</span>
+                开始完成：<span class="sta-complete">sta-complete</span>
+                删除：<span class="sta-del">sta-del</span>
+                </div>
+                <div class="textbox">
+                        <textarea disabled="disabled">
+                            <span class="sta-nostart">sta-nostart</span>
+                            <span class="sta-doing">sta-doing</span>
+                            <span class="sta-fail">sta-fail</span>
+                            <span class="sta-complete">sta-complete</span>
+                            <span class="sta-del">sta-del</span>  
+                        </textarea>
+                </div>
+            </section>
+        </div>
+     #end
+    #require("page/component/pagination.vm")
+#end

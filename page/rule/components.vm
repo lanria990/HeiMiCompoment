@@ -1,0 +1,116 @@
+#extends("/page/layout/frametwo.vm")
+
+#block("body")
+#require("./rule.css")
+<section id="content" class="art-content">
+<div class="container">
+  <div id="markup">
+    <article id="content" class="markdown-body">
+      <h1>前端组件规范（暂时）</h1>
+      <h2>1 前言</h2>
+      <p>组件是一种处理复杂系统分解成为更好的可管理模块的方式，它可以把系统代码划分为一系列职责单一，高度解耦且可替换的模块，系统中某一部分的变化将如何影响其它部分就会变得显而易见，系统的可维护性更加简单易得。</p>
+      <h2>2 代码风格</h2>
+      <h5>[强制] javascript组件中所有命名必须参照<a href="">javascript规范</a></h5>
+      <h5>[强制] css组件中所有命名必须参照<a href="">css组件规范</a></h5>
+      <h5>[强制] 文件名必须全部用小写，文件名分隔符用中划线连接，版本连接符用实心点，合并文件的文件名连接符用下划线.如：</h5>
+      <blockquote>
+        <p><code>m-login.min.js</code>和<code>m-login-1.0.css</code> 。</p>
+      </blockquote>
+      <h5>[建议] 文件夹命名暂定分类-模块名(m-loging)，所有组件都支持fis。</h5>
+      <blockquote>
+        <ul>
+          <li>m- : amd || cmd模块化</li>
+          <li>a- : angular组件</li>
+        </ul>
+      </blockquote>
+      <h5>[强制] 组件化 必须有api文档README(.md)，用来描述组件的基本情况、测试文件</h5>
+      <blockquote>
+        <ol>
+          <li>时间</li>
+          <li>适用场景</li>
+        </ol>
+      </blockquote>
+      <div class="codehilite">
+        <pre>    <span class="err">#</span> <span class="nx">模块名称</span>
+
+    <span class="o">-----</span>
+
+    <span class="nx">该模块的概要介绍</span><span class="err">。</span>
+
+    <span class="o">-----</span>
+
+    <span class="err">##</span> <span class="nx">使用说明</span>
+
+    <span class="nx">如何使用该模块</span><span class="err">，</span><span class="nx">可以根据组件的具体特征</span><span class="err">，</span><span class="nx">合理组织</span><span class="err">。</span>
+
+    <span class="err">##</span> <span class="nx">API</span>
+
+    <span class="nx">需要提供</span> <span class="nx">API</span> <span class="nx">说明</span><span class="err">，</span><span class="nx">属性</span><span class="err">、</span><span class="nx">方法</span><span class="err">、</span><span class="nx">事件等</span><span class="err">。</span>
+</pre>
+      </div>
+      <h5>[强制] 组件化 文件中必须要有HISTORY.md</h5>
+      <p>记录组件的变更，最好和 issues 进行绑定。请阅读<a href="https://raw.githubusercontent.com/aralejs/overlay/master/HISTORY.md">历史记录书写规范</a>。</p>
+      <div class="codehilite">
+        <pre><span class="err">###</span> <span class="mf">1.1</span><span class="p">.</span><span class="mi">0</span>
+
+<span class="o">*</span> <span class="p">[</span><span class="nx">fixed</span><span class="p">]</span> <span class="err">#</span><span class="mi">18</span> <span class="nx">修复了</span> <span class="nx">XXX</span> <span class="nx">问题</span>
+<span class="o">*</span> <span class="p">[</span><span class="nx">fixed</span><span class="p">]</span> <span class="err">#</span><span class="mi">29</span> <span class="nx">修复了</span> <span class="nx">YYY</span> <span class="nx">问题</span>
+<span class="o">*</span> <span class="p">[</span><span class="k">new</span><span class="p">]</span> <span class="err">#</span><span class="mi">12</span> <span class="nx">增加了</span> <span class="nx">ZZZ</span> <span class="nx">功能</span>
+<span class="o">*</span> <span class="p">[</span><span class="nx">improved</span><span class="p">]</span> <span class="err">#</span><span class="mi">23</span> <span class="nx">优化了</span> <span class="nx">BBB</span> <span class="nx">代码</span>
+
+<span class="err">###</span> <span class="mf">1.0</span><span class="p">.</span><span class="mi">0</span>
+
+<span class="o">*</span> <span class="p">[</span><span class="k">new</span><span class="p">]</span> <span class="nx">第一个发布版本</span>
+</pre>
+      </div>
+      <blockquote>
+        <p>模块的修改类型共有五项</p>
+        <ul>
+          <li>NEW #3 新增的属性、功能、方法、特性等等。</li>
+          <li>FIXED #15 修复 bug 和影响使用的性能问题等。</li>
+          <li>IMPROVED 接口增强、健壮性和性能提升、代码优化、依赖模块升级等。</li>
+          <li>CHANGED 涉及到兼容性变化的改动。</li>
+          <li>UNRESOLVED 已知的但本版本暂未修复的问题。</li>
+        </ul>
+      </blockquote>
+      <h2>3 注释</h2>
+      <h5>[强制] 为了便于代码阅读和自文档化，以下内容必须包含以 <code>/**...*/</code> 形式的块注释中。</h5>
+      <blockquote>
+        <ol>
+          <li>文件</li>
+          <li>namespace</li>
+          <li>类</li>
+          <li>函数或方法</li>
+          <li>类属性</li>
+          <li>事件</li>
+          <li>全局变量</li>
+          <li>常量</li>
+          <li>AMD 模块</li>
+        </ol>
+      </blockquote>
+      <h2>3 文件夹规范</h2>
+      <!-- -Web
+
+-- components
+--|--bossonz
+--|--jquery
+--page
+--|--
+
+--static
+--|--css
+--|--js
+--|--libs
+--|--images
+--rule
+--test
+--widget
+--| -- m-login --> 
+    </article>
+  </div>
+</div>
+  </section>
+## #end
+#end   
+    #require("page/rule/components.vm")
+#end

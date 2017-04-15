@@ -1,0 +1,50 @@
+.add-box {
+margin-bottom:30px;
+overflow: hidden;
+padding: 0;
+border: 1px solid #F2EFEF;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.add-box .title {
+display: block;
+height: 50px;
+padding-left: 20px;
+background: whiteSmoke;
+color: #333;
+letter-spacing: 3px;
+font-size: 18px;
+line-height: 50px;
+}
+.J_Image{
+	position: relative;
+}
+.J_Image .font-btn-pro.tips{
+	position: absolute;
+	left: 220px;
+	top: 15px;
+}
+.J_Image .btn{
+	margin: -50px 0 0 20px;
+}
+textarea{
+	resize:none;
+}
+.texterar-tip{
+	margin: 80px 0 0 30px;
+}
+.add-con{
+margin: 25px 0 10px 20px;
+}
+.add-btn .btn{
+	margin:0 20px;
+}
+.webuploader-element-invisible {
+	position: absolute!important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px,1px,1px,1px);
+}

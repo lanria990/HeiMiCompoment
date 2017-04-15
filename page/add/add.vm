@@ -1,0 +1,116 @@
+#extends("page/layout/frame.vm")
+#block("body")
+     #require("static/css/webuploader/webuploader.css")
+     <div class="dn" id="backData" data-type="${business}">
+     <input type="hidden" name="name" value="$!{search_name}"/>
+     <input type="hidden" name="page" value="$!{search_page}"/>
+     <input type="hidden" name="state" value="$!{search_state}"/>
+     <input type="hidden" name="type1" value="$!{search_type1}"/>
+     <input type="hidden" name="type2" value="$!{search_type2}"/>
+     </div>
+<div class="art-content">
+  <div class="page-content">
+    <div class="col-md-10 add-box" id="goods">
+        <div class="title">商品信息</div>
+        <div class="col-md-8">
+          <div class="div-box">
+            <label class="control-label col-md-2">商品名称</label>
+            <div class="col-md-9 pal">
+              <input class="form-control" placeholder="" type="text" name="name" value="" id="goodsName"  maxlength="45">
+            </div>
+          </div>
+          <div class="div-box" >
+            <label class="control-label col-md-2">类别</label>
+            <div class="col-md-9 pal">
+              <div class="div-box" >
+                <select  class="form-control" id="type1" data-id="$!{goodsInfo.type1}">
+                </select>
+              </div>
+              <div class="div-box" >
+                <select  class="form-control matop15" id="type2"data-id="$!{goodsInfo.type2}">
+                </select>
+              </div>
+            </div>
+          </div>
+          
+           <div class="div-box  J_Image dn">
+            <label class="control-label col-md-2">封面小图</label>
+            <div class="col-md-9 pal div-boximg "  >
+              <img src="/static/images/img.jpg" width="100" height="100" id="headSmallImg">
+              <a class="ser_bot radius5 edei_bot" id="headSmall">上传图片</a></div>
+          </div>
+          <div class="div-box  J_Image">
+            <label class="control-label col-md-2">封面大图</label>
+            <span class="gr_color">建议尺寸300*300</span>
+            <div class="col-md-9 pal div-boximg "  >
+              <img src="/static/images/img.jpg" width="100" height="100" id="headBigImg">
+              <a class="btn btn-min btn-info" id="headBig">上传图片</a>
+            </div>
+
+          </div>
+          <div class="div-box">
+          <label class="control-label col-md-2">商品描述</label>
+          <span class="gr_color">建议字数20个-30个，最多为100个字</span>
+            <div class="col-md-9">
+              <textarea id='info' class=" form-control" rows="8" maxlength='100'></textarea>
+            </div>
+            </div>
+        
+          <div class="div-box">
+            <label class="control-label col-md-2">状态</label>
+            <div class="col-md-9">
+              <select class="form-control" name="state" id="state">
+                <option value="0" selected>下架</option>
+                <option value="1">上架</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="clearboth"></div>
+      </div>
+<!-- begin -->
+<div class="div-box col-md-12">
+      <div class="col-md-12">
+      <div class="tip-title">商品套餐及信息</div>
+      <div class="col-md-12">
+        #block("sell")
+          #widget("widget/sell/sell.vm" "template")
+        #end
+      </div>
+      <div class="gr_color maall">商品图片建议尺寸 300px*200px</div>
+      <div class="clearboth"></div>
+
+      </div>
+</div>
+ <div class="div-box col-md-10">
+    <div class="col-md-12">
+      <div class="wid_tip" id="switchTab"><a>title</a> </div>
+        #block("m-phone-edit")
+            #widget("widget/m-phone-edit/m-phone-edit.vm")
+        #end
+          </div>
+    </div>
+  </div>
+    <div class="algin-center col-md-12" id="lastAction">
+    <a class="ser_bot radius5 gree" id="sure">确定</a>
+    <a class="ser_bot radius5  cacel_bot left30 J_BCancel" id="cancel">取消</a>
+    </div>
+  </div>
+</div>
+
+<div id='loading'><div class="loading"></div><div class="a-show-mask m-mask wtag zcvr" style="opacity: 0.5; display:block;" ></div></div>
+<div class="a-show-mask m-mask wtag zcvr dn" style="opacity: 0.5;" id="sharemask"></div>
+#script()
+  require(['./add']);
+ #end
+  ## var business = $business;
+
+  ## window.goods = $goodsInfo;
+
+  ## var CType1s = $type1List;
+
+  ## var CType2s = $type2List;
+ 
+  #end
+  #require("page/add/add.vm")
+#end

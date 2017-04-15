@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+#html("static/js/require.js" )
+<html lang="zh-CN">
+    #head() 
+	    #require("./paginnation.css")
+		#require("/static/css/layout.css")
+		#require("/page/examples/icon/font.css")
+    #end## end head
+    #body()
+     <div id="J_Page" class="pagination-page"></div>
+    #end## end of body
+    #script()
+    require(['./test.js'])     
+   #end
+     #require("page/examples/paging/test.vm")
+#end## end of html

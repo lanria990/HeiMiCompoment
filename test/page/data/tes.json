@@ -1,0 +1,16 @@
+{
+	"code": 0,
+	"map": {
+		"list": [{
+			"title": "标题",
+			"userName": "用户名",
+			"content": "内容",
+			"time": "时间"
+		}],
+		"pageIndex": 1,
+		"pageCount": 5
+	},
+	"msg": "操作成功"
+}
+
+

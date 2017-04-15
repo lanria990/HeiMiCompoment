@@ -1,0 +1,28 @@
+<!-- 
+ * 提示框重构
+ * @author YJL 2015/04/28
+ * @author LYY 2015/05/08
+ * -->
+<link rel="stylesheet" type="text/css" href="m-confirm.css">
+ <div class="modal fade" >
+    <div class="modal-table" style="z-index: 1001;position: relative;">
+        <div class="modal-table-cell">
+            <div class="modal-dialog modal-danger">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close J_FClose" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title"><%= title %></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p><%= content %></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success J_FSure"><%= confirmTxt %></button>
+                        <button type="button" class="btn btn-del J_FClose" data-dismiss="modal"><%= cancelTxt %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="a-show-mask m-mask wtag zcvr" style="opacity: 0.5; display: block;"></div>
+</div>

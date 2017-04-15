@@ -1,0 +1,133 @@
+## 列表组件布局
+## @author LYY 2015/05/07
+## @description 分类列表组件css命名全以classify-开头
+##依赖的css有page/examples/button/button.css和/page/examples/prompt/prompt.css
+
+##
+#extends("/page/layout/frame.vm")
+  #block("body")
+  #require("/page/examples/paging/paginnation.css")  
+  ## #require("page/list/classify-list.css")
+  <div class="art-content">
+  <header class="page-header">
+    <h1>后台分类列表组件</h1>
+  </header>
+  <h3>说明</h3>
+  <div class="docs-waring">
+    <ul class="disc-li">
+      <li>依赖的css有button.css和prompt.css</li>
+      <li>下划线开头的方法名为私有函数，不允许调用和重新实例化</li>
+      <li>bsz.list 内部类的详细说明，以及功能类，都可以在bsz这个变量中访问到.</li>
+      <li>虚函数如若使用到必须实例化，否则会抛出错误</li>
+    </ul>
+  </div>
+  <h3>示例Demo</h3>
+  <div class="docs-waring">
+    <ul class="disc-li">
+    <li>查看分类列表Demo<a href="/admin/list/classify">点击我</a></li>
+    <li>查看评论列表Demo<a href="/admin/list/comment">点击我</a></li>
+    <li>查看基本列表Demo<a href="/admin/list/base">点击我</a></li>
+    <li>查看列表API<a href="/admin/list/api">点击我</a></li>
+    </ul>
+  </div>
+
+
+  <h3>示例代码</h3>
+ 
+
+  
+    <div class="docs-section">
+    <div class="m-example">
+    <h4>HTML代码</h4>
+    </div>
+    <div class="highlight">
+    <pre><code  class="language-html" data-lang="html">
+    <div class="contable classify-table bordernone">
+      <div class="title">分类列表</div> 
+      <div class="search" id="search">
+        <header > <span class="J_Search">
+          <input name="q" type="text" placeholder="请输入城事主题" id="searchText" value="$!{search_name}" maxlength='30'/>
+          </span> 类别
+          <select name="type" id="type">
+            <option value="-1">不限 </option>
+            <option value="0">娱乐</option>
+          </select>
+          状态
+          <select name="state" id="state" data-id="$!{search_state}">
+            <option value="-1" >不限</option>
+            <option value="0">下架</option>
+            <option value="1">上架</option>
+          </select>
+          <button type="button" class="btn btn-info" id="searchBut">搜索</button>
+          <div class="pull-right"> 
+          <button type="button" class="btn  btn-success" id="add">添加</button>
+          <button type="button" class="btn  btn-del" id="delAll">删除</button>
+        </header>
+      </div>
+      <!-- 列表组件设置表头,格式为json格式    -->
+      # set( $ thead = {"checkbox":true,"width":"5%","items":[{"width":"5%","name":"序号"},{"width":"20%","name":"城事主题"},{"width":"10%","name":"用户"},{"width":"27%","name":"内容"},{"width":"18%","name":"时间"},{"width":"15%","name":"操作"}]} )
+     
+      <!-- 列表组件模块引用位置,其路径为("widget/m-list/m-list.vm")    -->
+      # block("m-list")
+        # widget("widget/m-list/m-list.vm" $ thead)
+      # end
+      </div>
+      </code></pre> 
+</div>
+</div>
+
+ <div class="docs-section">
+      <div class="m-example" data-example-id="small-well">
+        <h4>JS代码</h4>        
+      </div>
+      <div class="highlight">
+      <pre>
+  <code class="language-javascript" data-lang="javascript">
+    var bsz = require('widget/m-list/bsz.list.js');//加载list模块
+    var tableTplFn = __inline('/static/libs/list/_baseTb.tmpl') //加载列表模板
+
+    require('upload') //加载upload
+    require('page') //加载分页组件
+
+    /**
+    * 获取分页查询ajax参数
+    * @return {object} ajax参数
+    */
+    function getPostData() {
+      var o = {};
+      o.page = $('#pageList').data('page').getNowPage(); //获取当前页
+      o.name = $('#searchText').val();
+      //...
+      return o;
+    }
+
+    /**
+    * 获取添加或修改弹窗ajax参数
+    * @param  {object} obj 弹窗指向
+    * @return {obejct}     ajax参数
+    */
+    function getData(obj) {
+      var o = {};
+      //...
+      return o;
+    }
+
+
+    bsz.check.init();//初始化全选事件
+    var list = new bsz.list();//初始化列表事件
+    list.init({
+      tableTplFn: tableTplFn,
+      getPostData: getPostData,
+      getData: getData,
+      base: '/admin/list/',//ajax路径前缀
+      fn: ['search', 'delAll', 'add', 'page', 'del', 'edit']//初始化函数
+    })
+  </code>
+  </pre>
+      </div>
+    </div>
+  </div>
+  #end
+  ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+  #require("page/list/list.vm")
+#end

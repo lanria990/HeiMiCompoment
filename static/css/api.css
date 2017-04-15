@@ -1,0 +1,49 @@
+/* 
+## javascript api css
+## @author YJL  2015/05/11
+## @description  API css
+##  */
+code, kbd, pre, samp {
+font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+.art-content ul {
+padding-left: 45px;
+}
+.art-content li code , .art-content td code{
+padding: 2px 4px;
+font-size: 90%;
+color: #c7254e;
+background-color: #f9f2f4;
+border-radius: 4px;
+}
+.art-content li>code, .art-content tt, .art-content td>code{
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+.art-content table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+.art-content p, .art-content blockquote, .art-content ul, .art-content ol, .art-content dl, .art-content table, .art-content pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+.art-content table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+.art-content table th, .art-content table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+.art-content ul li{
+	list-style: inherit;
+}

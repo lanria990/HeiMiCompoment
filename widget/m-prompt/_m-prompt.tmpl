@@ -1,0 +1,37 @@
+<!-- 
+ * 提示框重构
+ * @author YJL 2015/04/28
+ * -->
+ 
+<div class="tip">
+  <div class="mask-tip mask-tip-icon <%=item.boxClass%>">
+    <div class="mask-tip-title <%=item.titleClass%>">
+       <%if(!!item.icon){%>
+        <i class="icon iconfont"><%=item.icon%></i>
+      <%}%>
+      <%if(!!item.title){%>
+        <%=item.title%>
+      <%}%>
+      <%if(!!item.close){%>
+        <button type="button" class="close">×</button>
+      <%}%>
+    </div>
+      <%if(!!item.cont){%>
+        <div class="mask-tip-con algin-center"> 
+          <%if(!!item.cont.icon){%>
+            <i class="icon iconfont <%=item.cont.class%>"><%=item.cont.icon%></i>
+          <%}%>
+              <%=item.cont.content%>
+        </div>
+      <%}%>
+    <div class="mask-tip-btn algin-center">
+      <%if(!!item.button.sure){%>
+        <button type="button" class="btn btn-success sure">确认</button>
+      <%}%>
+      <%if(!!item.button.close){%>
+        <button type="button" class="btn btn-default-border cacel">关闭</button>
+      <%}%>
+    </div>
+  </div>
+  <div class="fade m-mask in"></div>
+</div>

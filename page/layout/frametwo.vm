@@ -1,0 +1,38 @@
+## 入口快速链接文件
+<!DOCTYPE html>
+#html("static/js/mod-amd.js" )
+<html lang="zh-CN">
+    #head()
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit"> 
+        #require("./index.css")
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        <title></title> 
+    #end## end head
+    <header class="header">
+      <nav> <a href="/" class="logo">HeiMi</a> 
+        <!--start navigator-->
+        <ul class="navigator">
+          <li id="nav_index" class="current"><a href="/">首页</a></li>
+          <li><a href="">起步</a></li>
+          <li><a href="">快速入门</a></li>
+          <li><a>功能组件</a></li>
+          <li><a href="/file">规范文件</a></li>
+        </ul>
+      </nav>
+    </header>
+     #body()
+            ## 定义一个区域
+            #block("body")
+            #end         
+    #end## end of body
+
+    ## 代码高亮插件
+    <script src="/static/rainbow/rainbow-custom.js"></script>
+    ## <script src="/static/prettify/prettify.js"></script>
+    ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+    #require("page/layout/frametwo.vm")
+
+#end## end of html

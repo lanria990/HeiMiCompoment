@@ -1,0 +1,87 @@
+## 按钮组件布局
+#extends("/page/layout/frame.vm")
+    #block("body")
+      #require("page/examples/button/button.css")
+      ## #require("/widget/m-login/m-login.css")
+      <style type="text/css">
+      body{
+        background: none;
+      }
+      </style>      
+<div class="art-content">
+  <header class="page-header">
+    <h1>后台登录组件</h1>
+  </header>
+  <div class="docs-waring">
+    <h4>功能列表</h4>
+    <ul class="disc-li">
+      <li>用户名密码登录</li>
+      <li>登录校验（校验规则判空，密码长度判断）</li>
+      <li>提示采用 bsz模块的alert</li>
+    </ul>
+  </div>
+  <div class="docs-waring">
+    <h4>注意事项</h4>
+    <ul class="disc-li">
+	    <li>如果需要密码加密请引入base64.js|md5.js|sha1.js，统一密钥，修改js 需要修改 js中的ajax路径和登录成功的路径</li>
+	    <li>查看Demo<a href="/admin/demo/login"  target="_blank">点击我</a></li>
+	    <li>组件文件夹路径:widget/m-login</li>
+    </ul>
+  </div>
+  <h3>示例代码</h3> 
+  <div class="docs-section"> 
+   <div class="m-example"> 
+    <h4>HTML结构</h4> 
+   </div> 
+   <pre><code class="language-html" data-lang="html">
+  <div class="m-login"> 
+   <div class="m-login-box m-login-radius"> 
+    <div class="m-login-box-title">
+     管理员登录
+    </div> 
+    <form class="m-login-box-cont" id="loginForm"> 
+     <div class="m-login-form"> 
+      <p class="m-login-error" id="loginError"></p> 
+     </div> 
+     <div class="m-login-form"> 
+      <label for="userName" class="m-login-user m-login-icon"></label> 
+      <input type="text" id="userName" autocomplete="off" name="username" class="m-login-form-controller" value="" /> 
+     </div> 
+     <div class="m-login-form"> 
+      <label for="userName" class="m-login-pwd m-login-icon"></label> 
+      <input type="password" id="passWd" name="password" class="m-login-form-controller" value="" autocomplete="off" /> 
+     </div> 
+     <div class="m-login-form"> 
+      <input type="submit" value="登录" id="login" class="m-login-submit" /> 
+     </div> 
+    </form> 
+   </div> 
+  </div>
+    </code></pre> 
+  </div>
+  <div class="docs-section"> 
+   <div class="m-example"> 
+    <h4>JS结构</h4> 
+   </div> 
+   <pre><code class="language-javascript" data-lang="javascript">
+      //后台路径
+      '/admin/login/loginAjax.do'
+      //后台参数
+      o={
+          name:'用户名',
+          pwd:'密码' 
+      }
+      var add = new Base64();
+      var str = add.encode('密码');
+      //或者
+      var str = hex_md5('密码')
+      //或者
+      var str = hex_sha1('密码')
+    </code></pre> 
+  </div>
+</div>
+       
+    #end
+    ## 需要依赖一下自己，否则该 vm 中依赖没法自动加载进来。
+    #require("page/login/login.vm")
+#end

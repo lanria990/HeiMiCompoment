@@ -1,0 +1,39 @@
+{
+    "code": 0,
+    "map": {
+        "list": [{
+            "classify": 1,
+            "id": 1,
+            "imgUrl": "http://dummyimage.com/640x250/02adea&text=1",
+            "order": 0,
+            "title": 1,
+            "type": 1,
+            "url": "1"
+        }, {
+            "classify": 1,
+            "id": 1,
+            "imgUrl": "http://dummyimage.com/640x250/02adea&text=1",
+            "order": 1,
+            "title": 1,
+            "type": 1,
+            "url": "1"
+        }, {
+            "classify": 1,
+            "id": 1,
+            "imgUrl": "http://dummyimage.com/640x250/02adea&text=1",
+            "order": 2,
+            "title": 1,
+            "type": 1,
+            "url": "1"
+        }, {
+            "classify": 1,
+            "id": 1,
+            "imgUrl": "http://dummyimage.com/640x250/02adea&text=1",
+            "order": 3,
+            "title": 1,
+            "type": 1,
+            "url": "1"
+        }]
+    },
+    "msg": ""
+}

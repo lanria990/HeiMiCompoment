@@ -1,0 +1,33 @@
+<%if(!!items&&items.length>0){%> 
+<%for (var i=0;i<items.length;i++){%>	
+<tr data-order="<%=items[i].order%>" class="J_Image">
+	<td class="wi60"><img  src="<%=items[i].imgUrl%>" width="60" height="60"></td>
+	<td class="wi200">
+		<ul class="td_list">
+			<%if(items[i].type==1){%>	
+				<li>
+					<span><input name="type<%=items[i].order%>" type="radio" value="1" checked>地址</span>
+					<input  name="url" value="<%=items[i].url%>" class="left2 wi200"  data-type="1"></li>
+				<li>
+					<span><input name="type<%=items[i].order%>" type="radio" value="0">资讯</span>
+					<input type="text"  name="url" value="" class="J_Input wi200" data-type="0">
+				</li>
+			<%}else{%>
+				<li>
+					<span><input name="type<%=items[i].order%>" type="radio" value="1" >地址</span>
+					<input type="text" name="url" value="" class="left2 wi200"  data-type="1"></li>
+				<li>
+					<span><input name="type<%=items[i].order%>" type="radio" value="0" checked>资讯</span>
+					<input name="url" value="<%=items[i].title%>" class="J_Input wi200" data-id="<%=items[i].id%>" data-type="0">
+				</li>
+			<%}%>
+		</ul>
+	</td>
+	<td class="box-operate wi100">
+		<a class="iconfont J_Up">&#xe69a;</a>
+		<a class="iconfont J_Down">&#xe69b;</a>
+		<a class="iconfont J_Del">&#xe670;<a>
+	</td>
+</tr>
+<%}%>
+<%}%>	

@@ -1,0 +1,84 @@
+/**
+ * @author YJL 2015/04/07
+ * @description 整理login模块全部以m-login开头 
+ */
+
+body{background:url(./img/bg.png?__inline) repeat;}
+.m-login{margin:5% auto 0 auto;width: 500px;color: #969696;}
+.m-login .m-login-error{
+	margin: 0 auto 10px auto;
+	height: 20px;
+}
+.m-login-box{top:25%;overflow: hidden;width:388px;background: #fff;position: fixed;}
+.m-login-radius{
+	border: 1px solid #F2EFEF;
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+box-shadow: 0 1px 4px rgba(0,0,0,.065);
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;}
+.m-login-box-title {
+	padding: 10px 10px 10px 20px;
+	border-bottom: 1px solid #CFCFCF;
+	color: #333;
+	letter-spacing: 3px;
+	font-size: 18px;
+}
+.m-login-box-cont{ margin:3% 32px 2% 32px;width:324px;}
+.m-login-box-cont:after{
+	clear: both;
+	content: "";
+	visibility: visible;
+	display: block;
+}
+.m-login-form{position: relative;float: left;width: 100%;margin-bottom:15px;}
+.m-login-form .m-login-icon{
+	position: absolute;
+	top: 25%;
+	left: 3.3%;
+	font-size: 20px;
+	color: #ccc;
+	width: 30px;
+	height: 30px;
+}
+.m-login-user{
+	background: url(./img/icon.png) -3px -3px;
+}
+.m-login-pwd{
+	background: url(./img/icon.png) -3px -38px;	
+}
+
+.m-login-form .m-login-form-controller{
+	float:left;
+	padding: 10px 0 10px 40px;
+	width: 86%;
+	border:2px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #707070;
+	font-size:18px;
+}
+.m-login-form .m-login-form-controller:focus{border:2px solid #01abdf;}
+
+.m-login-form .m-login-form-controller:focus+.iconfont{
+	color:#01abdf;
+}
+.m-login-submit{
+	width: 100%;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+		    border-radius: 5px;
+	background: #01abdf;
+	font: 14px/1.5 "FontAwesome","Microsoft YaHei","微软雅黑",arial,simsun,"宋体";
+	cursor: pointer;
+	padding: 5px 0;
+	font-size: 18px;
+	color: #fff;
+	line-height: 40px;
+	margin: 10px 0 35px 0;
+	border: none;
+}
+.m-login-error{color: red;text-align: center;}

@@ -1,0 +1,37 @@
+<!-- /**
+ * @author LYY 2015/05/11
+ * @description 整理列表组件 
+ */ -->
+<%if(items && items.length>0){%>
+<%for (var i=0;i<items.length;i++){%>	
+<tr data-id="<%=items[i].id%>">
+    <td><input name="items" type="checkbox" value=""></td>
+    <td class="J_Order"></td>
+    <td><%=items[i].type%></td>
+    <td><%=items[i].order%></td>
+    
+    <td>
+        <%if(items[i].state==0){%>
+            <span class="font-btn-del">下架</span>
+        <%}else{%>
+            <span class="font-btn-add">上架</span>
+        <%}%>
+    </td>
+
+    <td class="operate">
+        <a class="J_Edit font-btn-info font-btn-info" >编辑</a>
+
+        <%if(items[i].state==0){%>
+        <a class="J_Change font-btn-add" data-state='1'>上架</a>
+        <%}else{%>
+        <a class="J_Change font-btn-del" data-state='0'>下架</a>
+        <%}%>
+
+        <a class="J_Del font-btn-del">删除</a>
+    </td>
+  </tr>
+ <% }%>
+ <%}else{%>
+<tr class="listtishi"><td colspan="66">列表为空</td></tr>
+
+<%}%>

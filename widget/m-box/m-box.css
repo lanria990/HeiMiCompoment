@@ -1,0 +1,102 @@
+.mask-tip{
+	position: fixed;
+	top: 30%;
+	left: 35%;
+	z-index: 1000;
+	overflow: hidden;
+	min-width: 350px;
+	width: auto;
+	border: 1px solid #6F796A;
+	border-radius: 5px;
+	background: #fff;
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	display: none;	
+}
+
+.mask-tip-algin ul li{
+	list-style: disc;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.mask-tip-title {
+	padding-left: 11px;
+	height: 41px;
+	border-bottom: 1px solid #C5C0C0;
+	background: #f0f0f0;
+	font-size: 20px;
+	line-height: 40px;
+}
+.mask-tip-con{
+	margin:30px 20px;
+}
+.mask-tip-btn{
+	margin-bottom:20px;
+	padding: 0 20px;
+}
+.mask-tip-btn .btn:first-child{
+	margin-right: 20px;
+}
+.mask-tip-title .close{
+	float: right;
+	font-size: 30px;
+	line-height: 38px;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .6;
+	filter: alpha(opacity=60);
+	margin-right: 10px;
+}
+.mask-tip-title .icon{
+	font-size: 25px;
+}
+.mask-tip-title .close:hover{
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+.mask-tip-gree .mask-tip-title{
+	background: #4caf50;
+	color: #fff;
+}
+.mask-tip-gree .close{
+	color: #fff;
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+.mask-tip-gree .close:hover{
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.m-mask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 800;
+	background-color: #000;
+	opacity: .5;
+
+}
+
+/*操作提示*/
+.title-background{
+background: none;
+border-bottom: none;
+}
+.mask-operation .mask-tip-con .error{
+	font-size: 70px;
+	color: #ff9800;
+}
+.mask-operation .mask-tip-con .success{
+	color: #4caf50;
+	font-size: 70px;
+}
+.mask-operation .mask-tip-con .fail{
+	color: #f44336;
+	font-size: 70px;
+}
+.mask-operation .mask-tip-btn .btn:first-child{
+	margin-right: 0;
+}

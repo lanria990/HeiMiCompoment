@@ -1,0 +1,10 @@
+#extends("/page/layout/frametwo.vm")
+
+#block("body")
+#require("./rule.css")
+<section id="content" class="art-content">
+
+</section>
+#end   
+    #require("page/rule/components.vm")
+#end

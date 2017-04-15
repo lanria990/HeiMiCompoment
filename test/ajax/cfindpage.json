@@ -1,0 +1,29 @@
+{
+	"code": 0,
+	"map": {
+		"list": [{
+			"id": 12,
+			"title": "水果",
+			"order": "0",
+			"state": "0"
+		}, {
+			"id": 13,
+			"title": "娱乐",
+			"order": "1",
+			"state": "0"
+		}, {
+			"id": 14,
+			"title": "食品",
+			"order": "2",
+			"state": "0"
+		}, {
+			"id": 15,
+			"title": "生鲜",
+			"order": "3",
+			"state": "1"
+		}],
+		"pageCount": 2,
+		"pageIndex": 1
+	},
+	"msg": ""
+}

@@ -1,0 +1,26 @@
+{
+	"thead": {
+		"checkbox": true,
+		"width": "5%",
+		"items": [{
+			"width": "5%",
+			"name": "序号"
+		},{
+			"width": "20%",
+			"name": "城事主题"
+		},{
+			"width": "20%",
+			"name": "时间"
+		},{
+			"width": "10%",
+			"name": "类别"
+		},{
+			"width": "10%",
+			"name": "状态"
+		},{
+			"width": "27%",
+			"name": "操作"
+		}
+		]
+	}
+}

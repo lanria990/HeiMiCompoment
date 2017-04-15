@@ -1,0 +1,47 @@
+<div class="box-content" >
+      <div class="mask-tip-title"> 
+        <span class="name">轮播图</span>
+        <a class="btn btn-min btn-default-border pull-right" id="carouselSet">设置</a> 
+      </div>
+      <div id="carousel" class="slider" >
+        <div id="carCont">       
+       
+        </div>
+      </div>
+</div>
+
+<div class="mask-tip mask-tip-defualt tip " id="carouselBox">
+  <div class="dialog">
+    <div class="mask-tip-title">编辑<button class="iconfont J_BClose" title="关闭">&#xe61a;</button></div>
+    <div class="mask-tip-con">
+      <table class="theadtabel" >
+        <thead>
+          <tr>
+          <th width="40px">图片地址</th>
+          <th width="250px">连接地址/资讯</th>
+          <th width="50">操作</th>
+          </tr>
+        </thead>
+      </table>
+      <div class="height400">
+      <table >
+        <tbody id="carBoxCont">
+        </tbody>     
+      </table>   
+    </div>
+    <div class="">
+      <div class="J_Add aligin-right">
+        <a class="btn btn-success" id="addUpload">添加 </a>
+      </div>
+      <div  class="pro-font font-btn-pro">建议尺寸400*200px</div>
+      <div class="mask-tip-btn algin-center">
+        <a class="btn btn-success J_BSave">保存</a>
+        <a class="btn btn-default-border J_BCancel">取消</a>
+      </div>        
+    </div>
+  </div>
+</div>
+</div>
+#script()
+    require(['./m-carousel']);
+#end

@@ -1,0 +1,337 @@
+## 分页组件布局
+## 
+## @author YJL  2015/05/7
+## @description 分页组件 API
+## 
+#extends("/page/layout/frame.vm")
+
+ #block("body")
+ #require("/static/css/api.css")
+
+## <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"></p>
+
+<section id="content" class="art-content">
+	<h2>分页控件 API 文档</h2>
+	<h4>myPage内部参数的详细说明，使用场景多在商城搜索，后台列表搜索，订单等。</h4>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<p>
+	<h4>参数说明配置项</h4>
+	<ul>
+		<li>
+			<p>
+				<code>pno</code>:  {Selector,Number}   [默认值：1]   当前页码
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>total</code>: {Selector,Number}   [默认值：1] 总页码
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>totalRecords</code>: {Selector,Number}   [默认值：0] 总数据条数
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>mode</code>: {Selector,String}  [默认值：'click'] 模式(link 或者 click)
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isShowFirstPageBtn</code>
+				:{Selector,Boolean}  [默认值：true],是否显示首页按钮
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isShowLastPageBtn</code>
+				: {Selector,Boolean}  [默认值：true], 是否显示尾页按钮
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isShowPrePageBtn</code>
+				: {Selector,Boolean}  [默认值：true], 是否显示上一页按钮
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isShowNextPageBtn</code>
+				: {Selector,Boolean}  [默认值：true], 是否显示下一页按钮
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isShowTotalPage</code>
+				: {Selector,Boolean}  [默认值：true], 是否显示总页数
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isShowTotalRecords</code>
+				: {Selector,Boolean}  [默认值：false], 是否显示总记录数
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>isGoPage</code>
+				: {Selector,Boolean}  [默认值：true], 是否显示页码跳转输入框
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>hrefFormer</code>
+				: {Selector,String}  [默认值：''], 链接前部
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>hrefLatter</code>
+				: {Selector,String}  [默认值：''], 链接尾部
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>pageContClass</code>
+				:{Selector,String}  [默认值：'pagination-page'], 分页样式
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>gopageWrapId</code>
+				: {Selector,String}  [默认值：'kkpager_gopage_wrap'],分页输跳转内容块id
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>gopageButtonId</code>
+				: {Selector,String}  [默认值：'kkpager_btn_go'], 分页跳转按钮id'
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>gopageTextboxId</code>
+				: {Selector,String}  [默认值：'kkpager_btn_go_input'], 分页输入框id'
+			</p>
+		</li>
+		<li>
+			<p>
+				<code>lang</code>
+				: {Selector,Object}  , 分页控件文本,
+			</p>
+			<ul>
+				<li>
+					<p>
+						<code>firstPageText</code>
+						:{Selector,String}  [默认值：'&lt;&lt;'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>firstPageTipText</code>
+						: {Selector,String}  [默认值：'首页'], title文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>lastPageText</code>
+						: {Selector,String}  [默认值：'&gt;&gt;'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>lastPageTipText</code>
+						: {Selector,String}  [默认值：'尾页'], title文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>prePageText</code>
+						: {Selector,String}  [默认值：'&lt;'], 文本'
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>prePageTipText</code>
+						: {Selector,String}  [默认值：'上一页'], title文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>nextPageText</code>
+						: {Selector,String}  [默认值：'&gt;'], 文本'
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>nextPageTipText</code>
+						: {Selector,String}  [默认值：'下一页'], title文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>totalPageBeforeText</code>
+						:{Selector,String}  [默认值：'共'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>totalPageAfterText</code>
+						:{Selector,String}  [默认值：'页'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>totalRecordsAfterText</code>
+						: {Selector,String}  [默认值：'条数据'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>gopageBeforeText</code>
+						: {Selector,String}  [默认值：'转到'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>gopageButtonOkText</code>
+						: {Selector,String}  [默认值：'确定'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>gopageAfterText</code>
+						: {Selector,String}  [默认值：'页'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>buttonTipBeforeText</code>
+						:{Selector,String}  [默认值：'第'], 文本
+					</p>
+				</li>
+				<li>
+					<p>
+						<code>buttonTipAfterText</code>
+						:{Selector,String}  [默认值：'页'], 文本
+					</p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<blockquote>
+		<p>Selector :可选</p>
+	</blockquote>
+	<table>
+		<thead>
+			<tr>
+				<th>事件名</th>
+				<th>参数说明</th>
+				<th>描述</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clickFn</td>
+				<td>n：{NUMBER}</td>
+				<td>
+					点击
+					<code>&lt;a&gt;</code>
+					触发事件
+				</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>linkFn</td>
+				<td>n：{NUMBER}</td>
+				<td>
+					<code>&lt;a&gt;</code>
+					的href 链接拼接
+				</td>
+				<td>---</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4>事件说明</h4>
+	<table>
+		<thead>
+			<tr>
+				<th>事件名</th>
+				<th>参数说明</th>
+				<th>描述</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<code>getTotal</code>
+				</td>
+				<td>返回值：{NUMBER}</td>
+				<td>获取总页数</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>
+					<code>getNowPage</code>
+				</td>
+				<td>返回值：{NUMBER}</td>
+				<td>获取当前页</td>
+				<td>---</td>
+			</tr>
+			<tr>
+				<td>
+					<code>selectPage</code>
+				</td>
+				<td>
+					<code>pno</code>
+					:{Number}
+					<code>total</code>
+					:{Number}
+				</td>
+				<td>重新生成控件</td>
+				<td>---</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4>注意事项</h4>
+	<h5>
+		如果在一个页面中多次初始化分页函数，需要指定gopageWrapId、gopageButtonId、gopageTextboxId参数
+	</h5>
+	## <article>
+	## 	<h2>示例</h2>
+	## 	   <pre>  
+	##         <code class="language-javascript" data-lang="javascript">  
+	##         //引入分页控件 require('page');
+	## 		//调用方法
+	## 		var $page = $('#J_Page').myPage({
+	## 			pno: 1,
+	## 			total: 20,
+	## 			clickFn: function(n) {
+	## 				$page.selectPage(n)
+	## 			}
+	## 		});
+	## 		 //引入分页控件 require('page');
+	## 		//初始化方法
+	## 		var $page = $('#J_Page').myPage({
+	## 		    pno: 1,
+	## 		    total: 5,
+	## 		    mode：'link'
+	## 		    linkFn: _linkPage
+	## 		});
+
+	## 		//链接拼接
+	## 		function _linkPage(n){
+	## 		     //....
+	## 		}
+	##        </code>  
+	##       </pre>
+ ##    </article> 
+</section>
+
+   ## #end
+    #end   
+    #require("page/examples/paging/paging-api.vm")
+#end

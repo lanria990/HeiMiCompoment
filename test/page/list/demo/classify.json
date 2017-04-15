@@ -1,0 +1,22 @@
+{
+	"thead": {
+		"checkbox": true,
+		"width": "5%",
+		"items": [{
+			"width": "5%",
+			"name": "序号"
+		}, {
+			"width": "20%",
+			"name": "名称"
+		}, {
+			"width": "18%",
+			"name": "顺序"
+		}, {
+			"width": "10%",
+			"name": "状态"
+		}, {
+			"width": "15%",
+			"name": "操作"
+		}]
+	}
+}

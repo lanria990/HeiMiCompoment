@@ -1,0 +1,50 @@
+#extends("page/layout/frame.vm")
+#block("body")
+<div class="art-content">
+  <header class="page-header">
+    <h1>添加组件</h1>
+  </header>
+  <H2>组件手机端编辑器</H2>
+  <h3>示例说明：</h3>
+  <div class="docs-waring">
+      <ul class="text-doc disc-li">    
+        <li>引用css路径：require("/widget/m-phone-edit/m-phone-edit.css")</li>
+        <li>查看Demo<a href="/add">点击我</a></li>
+		<li>查看API<a href="/addapi">点击我</a></li>	
+      </ul>
+    </div>
+  <div class="docs-section">
+  	<div class="m-example">
+        <h4>HTML</h4>
+    </div>
+    <pre><code class="language-javascript" data-lang="javascript">
+   <div class="edit" id="J_Phone_Edit">
+      <div class="edit-title">商品描述</div>
+      <div class="edit-waring">
+        <div class="prompt font-btn-info">图片 建议规格 宽600px </div>
+        <div class="pull-right">
+        <a class="btn btn-success" id="J_Phone_Upload">添加图片</a>
+        <a class="btn btn-default-border" id="J_Phone_Text">添加文字</a>
+        </div> 
+      </div> 
+      <div class="edit-cont" id='J_Phone_Scroll'>
+          <div id="J_Phone_Cont"></div>
+      </div>                            
+    </div>
+    </code></pre>
+  </div>
+  <div class="docs-section">
+  	<div class="m-example">
+        <h4>JS</h4>
+    </div>
+    <pre><code class="language-javascript" data-lang="javascript">
+    var phoneEdit = require('widget/m-phone-edit/m-phone-edit');
+    phoneEdit.init();//初始化
+    phoneEdit.getData() //获取内容
+    phoneEdit.initModify(data) //初始化手机端编辑器内容
+    </code></pre>
+  </div>
+</div>
+#end
+#require("page/add/add.vm")
+#end

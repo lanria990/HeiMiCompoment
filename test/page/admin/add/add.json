@@ -1,0 +1,66 @@
+{
+	"template": [{
+		"attrs": [{
+			"edit": 1,
+			"id": 1,
+			"isChecked": true,
+			"name": "选项1"
+		}, {
+			"edit": 1,
+			"id": 2,
+			"isChecked": false,
+			"name": "选项2"
+		}, {
+			"edit": 1,
+			"id": 3,
+			"isChecked": false,
+			"name": "选项3"
+		}],
+		"edit": 1,
+		"id": 1,
+		"linkImg": 1,
+		"name": "属性一"
+	}, {
+		"attrs": [{
+			"edit": 1,
+			"id": 1,
+			"isChecked": true,
+			"name": "选项1"
+		}, {
+			"edit": 1,
+			"id": 2,
+			"isChecked": false,
+			"name": "选项2"
+		}, {
+			"edit": 1,
+			"id": 3,
+			"isChecked": false,
+			"name": "选项3"
+		}],
+		"edit": 1,
+		"id": 2,
+		"linkImg": 1,
+		"name": "属性二"
+	}, {
+		"attrs": [{
+			"edit": 1,
+			"id": 1,
+			"isChecked": true,
+			"name": "选项1"
+		}, {
+			"edit": 1,
+			"id": 2,
+			"isChecked": false,
+			"name": "选项2"
+		}, {
+			"edit": 1,
+			"id": 3,
+			"isChecked": false,
+			"name": "选项3"
+		}],
+		"edit": 1,
+		"id": 3,
+		"linkImg": 1,
+		"name": "属性三"
+	}]
+}

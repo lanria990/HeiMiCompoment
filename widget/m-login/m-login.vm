@@ -1,0 +1,40 @@
+## 
+## @author YJL 2015/04/07
+## @description 整理login模块全部以m-login开头 
+## 
+#script()
+(function(window,document){
+    if(top!=window) top.location=location.href;
+    document.uniqueID!=document.uniqueID&&!!location.hash&&(location.hash=location.hash);
+    window.focus();
+})(this,document);
+#end
+<link rel="stylesheet" href="/widget/m-login/m-login.css"> 
+<div class="m-login">
+<div class="m-login-box m-login-radius"> 
+  <div class="m-login-box-title">
+  管理员登录
+  </div>
+  <form class="m-login-box-cont" id="loginForm">
+    <div class="m-login-form"> 
+      <p class="m-login-error" id="loginError"></p>
+    </div>
+    <div class="m-login-form">
+      <input type="text" id="userName" autocomplete="off" name="username" class="m-login-form-controller" value="" maxlength="30" >
+      <i for="userName" class="m-login-user icon iconfont  m-login-icon"></i>
+    </div>
+    <div class="m-login-form">
+      <input type="password" id="passWd" name="password" class="m-login-form-controller" value="" autocomplete="off" maxlength="20" >
+      <i for="userName" class="m-login-pwd icon iconfont m-login-icon"></i>
+    </div>
+    <div class="m-login-form">
+      <input type="submit" value="登录" id="login" class="m-login-submit">
+    </div>
+  </form>
+</div>
+  <div class="clearboth"></div>
+</div>
+
+#script()
+  require(['./m-login']);
+#end

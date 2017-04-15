@@ -1,0 +1,54 @@
+## 
+## @author YJL 2015/05/06
+## @description 整理手机编辑模块全部以m-phone-edit开头 
+#require("static/css/webuploader/webuploader.css")
+## <link rel="stylesheet" href="/widget/m-phone-edit/m-phone-edit.css"> 
+## <link rel="stylesheet" href="static/css/layout.css">
+## <link rel="stylesheet" href="/widget/m-box/m-box.css">
+## <link rel="stylesheet" href="/page/examples/button/button.css">
+## require('')
+<div class="edit" id="J_Phone_Edit">
+  <div class="edit-title">商品描述</div>
+  <div class="edit-waring">
+    <div class="prompt font-btn-pro">图片 建议规格 宽600px </div>
+    <div class="pull-right">
+        <a class="btn btn-success" id="J_Phone_Upload">添加图片</a>
+        <a class="btn btn-default-border" id="J_Phone_Text">添加文字</a>
+    </div> 
+  </div> 
+  <div class="edit-cont" id='J_Phone_Scroll'>
+      <div id="J_Phone_Cont"></div>
+  </div>                            
+</div>
+
+
+<div class="mask-tip mask-tip-defualt tip"  id="J_P_EditBox">
+    <div class="mask-tip-title">添加文字<i class="bg3"></i></div>
+    <div class="mask-tip-con">
+      <div class="div-box txt-form col-md-12">
+          <textarea rows="10" class="form-control" id='J_P_EditArea'></textarea>
+      </div>     
+    </div>
+    <div class="mask-tip-btn algin-center">
+        <input type="button" value="确定" class="btn J_BSure btn-success" name="sure">
+        <input type="button" value="关闭" class="btn btn-del J_BCancel" name="cancel">
+      </div>
+</div>
+
+
+<div class="mask-tip mask-tip-defualt tip dn" id="J_P_EditImgBox" >
+  <div class="mask-tip-title">图片修改<i class="bg3 J_BCancel"></i></div>
+  <div class="mask-tip-con">
+    <div class="algin-center">
+      <img src="./img/default.png" id="J_P_EditImg" width="160" height="160">
+      <a id="J_P_EditImgUpload" class="btn m-p-imgbtn btn-info">修改图片</a>
+    </div>    
+  </div>
+  <div class="algin-center mask-tip-btn">
+      <input type="button" value="确定" class="J_BSure btn btn-success" name="sure">
+      <input type="button" value="关闭" class="J_BCancel btn btn-del" name="cancel">
+  </div>
+</div>
+#script()
+  require(['./m-phone-edit']);
+#end

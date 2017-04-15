@@ -1,0 +1,107 @@
+## 分页组件布局
+## 
+## @author YJL  2015/05/7
+## @description 分页组件 API
+## 
+#extends("/page/layout/frame.vm")
+
+ #block("body")
+ #require("/static/css/api.css")
+
+## <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"></p>
+
+<section id="content" class="art-content">
+	<h2>分页控件 API 文档</h2>
+	<h4>myMinPage内部参数的详细说明，使用场景多在商城搜索，后台列表搜索等。</h4>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<h4>参数说明配置项</h4>
+<ul>
+	<li>
+		<p>
+			<code>pno</code>
+			:  {Selector,Number}   [默认值：1]   当前页码
+		</p>
+	</li>
+	<li>
+		<p>
+			<code>total</code>
+			: {Selector,Number}   [默认值：1] 总页码
+		</p>
+	</li>
+	<li>
+		<p>
+			<code>isGoPage</code>
+			: {Selector,Boolean}  [默认值：true], 是否显示页码跳转输入框
+		</p>
+	</li>
+</ul>
+<table>
+	<thead>
+		<tr>
+			<th>事件名</th>
+			<th>参数说明</th>
+			<th>描述</th>
+			<th>备注</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>clickFn</td>
+			<td>n：{NUMBER}</td>
+			<td>
+				点击
+				<code>&lt;a&gt;</code>
+				触发事件
+			</td>
+			<td>---</td>
+		</tr>
+	</tbody>
+</table>
+<h4>事件说明</h4>
+<table>
+	<thead>
+		<tr>
+			<th>事件名</th>
+			<th>参数说明</th>
+			<th>描述</th>
+			<th>备注</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>getTotal</code>
+			</td>
+			<td>返回值：{NUMBER}</td>
+			<td>获取总页数</td>
+			<td>---</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getNowPage</code>
+			</td>
+			<td>返回值：{NUMBER}</td>
+			<td>获取当前页</td>
+			<td>---</td>
+		</tr>
+		<tr>
+			<td>
+				<code>selectPage</code>
+			</td>
+			<td>
+				<code>pno</code>
+				:{Number}
+				<code>total</code>
+				:{Number}
+			</td>
+			<td>重新生成控件</td>
+			<td>---</td>
+		</tr>
+	</tbody>
+</table>
+
+</section>
+## #end
+    #end   
+    #require("page/examples/paging/min-paging-api.vm")
+#end

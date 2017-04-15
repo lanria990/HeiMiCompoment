@@ -1,0 +1,20 @@
+<%if(!!items&&items.length>0){%> 
+<div class="svip" >
+   <div class="swipe-wrap">
+    <%for (var i=0;i<items.length;i++){%>	
+    	<div class="imgurl" title="<%=items[i].infoName%>"> 
+        	<a href="javascript:;" target="_blank"> 
+        		<img src="<%=items[i].imgUrl%>@1e_250h_640w_1c_0i_1o_90Q_1x" alt="<%=items[i].infoName%>" />
+        	</a> 
+        </div>
+    <%}%>
+    </div>
+  </div>
+  <ul class="swipe-nav" >
+    	<li class="on">&nbsp;</li>
+  	<%for (var i=1;i<items.length;i++){%>	
+        <li >&nbsp;</li>
+    <%}%>
+  </ul>
+</div>
+<%}%>

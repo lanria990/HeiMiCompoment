@@ -1,0 +1,6 @@
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>HeiMi Web组件库</h1>
+    <p class="lead">无数可复用的组件，包括按钮、分页、列表等更多功能。</p>
+  </div>
+</header>

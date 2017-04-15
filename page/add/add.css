@@ -1,0 +1,22 @@
+.add-box {
+margin: 30px auto;
+overflow: hidden;
+padding: 0;
+border: 1px solid #F2EFEF;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.add-box .title {
+display: block;
+height: 50px;
+padding-left: 20px;
+background: whiteSmoke;
+color: #333;
+letter-spacing: 3px;
+font-size: 18px;
+line-height: 50px;
+}

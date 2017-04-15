@@ -1,0 +1,22 @@
+<!-- /**
+ * @author YJL 2015/04/07
+ * @description 整理列表组件 
+ */ -->
+<%if(items && items.length>0){%>
+<%for (var i=0;i<items.length;i++){%>	
+<tr data-id="<%=items[i].id%>">
+    <td><input name="items" type="checkbox" value=""></td>
+    <td class="J_Order"></td>
+    <td><%=items[i].title%></td>
+    <td><%=items[i].userName%></td>
+    <td><%=items[i].content%></td>   
+    <td><%=items[i].time%></td>   
+    <td>
+    <a class="J_Del font-btn-del">删除</a>
+    </td>
+  </tr>
+ <% }%>
+ <%}else{%>
+<tr class="listtishi"><td colspan="66">列表为空</td></tr>
+
+<%}%>

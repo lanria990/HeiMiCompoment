@@ -1,0 +1,12 @@
+#set($title = "组件入口首页-博森")
+#extends("/page/layout/frametwo.vm")
+#block("body")
+<ul class="sidebar">
+	<li><a href="/share/css/display">css-基础知识</a><i class="icon iconfont">&#xe6e7;</i></li>
+	<li><a href="/share/css/box">css-盒子模型</a><i class="icon iconfont">&#xe6e7;</i></li>
+	<li><a href="/share/css/layout">css- 布局模型</a><i class="icon iconfont">&#xe6e7;</i></li>
+	
+</ul>
+#end
+
+#end
