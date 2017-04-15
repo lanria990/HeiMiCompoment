@@ -1,7 +1,12 @@
-jello-demo
+HeiMi-demo
 ==========
 
-Jello demo &amp; doc, you can [preview this online](http://106.186.23.103:8080/).
+HeiMi demo .
+
+## 示例
+
+![首页](static/images/introduct/index.png)
+![分页](static/images/introduct/pager.png)
 
 ## 如何使用
 
@@ -30,3 +35,7 @@ Jello demo &amp; doc, you can [preview this online](http://106.186.23.103:8080/)
     jello server start
     ```
 4. 自动打开浏览器预览页面
+
+
+##  开源许可证
+ MIT
