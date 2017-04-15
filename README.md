@@ -1,7 +1,7 @@
 HeiMi-demo
 ==========
 
-HeiMi demo .
+HeiMi demo . 基于Fis1.x+jello1.x，jQuery、CSS 组件
 
 ## 示例
 
